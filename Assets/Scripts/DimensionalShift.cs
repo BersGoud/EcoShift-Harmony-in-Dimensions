@@ -11,6 +11,9 @@ public class DimensionalShift : MonoBehaviour
     private bool isSwitching = false;
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
 
+    private GameObject player = GameObject().FindWithTag("player");
+    
+
 
     void Start()
     {
