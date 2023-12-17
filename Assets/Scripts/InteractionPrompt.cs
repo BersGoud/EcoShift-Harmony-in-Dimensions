@@ -11,6 +11,7 @@ public class InteractionPrompt : MonoBehaviour
 {
     private Transform _camera;
     public float Range;
+    public GameObject InteractionCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class InteractionPrompt : MonoBehaviour
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
                 //If it hits an interactable object, show UI prompt
+                InteractionCanvas.SetActive(true);
                 //TODO
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -34,6 +36,9 @@ public class InteractionPrompt : MonoBehaviour
                     interactObj.Interact();
                 }
             }
+        } else
+        {
+            InteractionCanvas.SetActive(false);
         }
     }
 }
