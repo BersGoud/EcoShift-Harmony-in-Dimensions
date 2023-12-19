@@ -7,11 +7,10 @@ public class DimensionalShift : MonoBehaviour
     public Camera camera3D;
     public Camera camera2D;
     public float transitionDuration = 1.0f; // Adjust the duration of the transition
+    public Transform player;
 
     private bool isSwitching = false;
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
-
-    private GameObject player = GameObject().FindWithTag("player");
     
 
 
@@ -19,6 +18,7 @@ public class DimensionalShift : MonoBehaviour
     {
         //initial camera should be 3D
         Enable3DCamera();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -31,22 +31,13 @@ public class DimensionalShift : MonoBehaviour
         {
             StartCoroutine(SwitchTo3DCamera());
         }
+
+        if (camera2D.enabled)
+        {
+            camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+            camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
+        }
     }
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("2DTrigger"))
-    //     {
-    //         ShiftTo2D();
-    //     }
-    // }
-    //
-    // void OnTriggerExit(Collider other)
-    // {
-    //     if (other.CompareTag("2DTrigger"))
-    //     {
-    //         ShiftTo3D();
-    //     }
-    // }
 
     void Enable3DCamera()
     {
@@ -76,7 +67,16 @@ public class DimensionalShift : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("Checking player");
+        if (player != null)
+        {
+            Debug.Log("Changing camera pos");
+            camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
+        }
+
         Enable2DCamera();
+        
+        // camera2D.transform.rotation = camera3D.transform.rotation; 
 
         timer = 0.0f;
         while (timer < transitionDuration)
