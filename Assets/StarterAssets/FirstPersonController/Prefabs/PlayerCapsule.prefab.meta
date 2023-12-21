@@ -5,6 +5,7 @@ PrefabImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 196525
@@ -12,3 +13,5 @@ AssetOrigin:
   packageVersion: 1.2
   assetPath: Assets/StarterAssets/FirstPersonController/Prefabs/PlayerCapsule.prefab
   uploadId: 562678
+=======
+>>>>>>> Stashed changes
