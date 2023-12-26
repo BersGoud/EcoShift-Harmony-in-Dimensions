@@ -9,7 +9,6 @@ public class KeyPadInteraction : Interaction
 
     public override string Interact()
     {
-        Debug.Log("E was pressed on this object!");
         return base.Interact();
     }
 }

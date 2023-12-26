@@ -14,9 +14,13 @@ public class InteractionPrompt : MonoBehaviour
     public Transform Camera;
     public float Range;
     public GameObject InteractionCanvas;
+
+    private TextMeshProUGUI _interactText;
+    private bool isPressedTextShown = false;
     // Start is called before the first frame update
     void Start()
     {
+        _interactText = InteractionCanvas.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -30,20 +34,25 @@ public class InteractionPrompt : MonoBehaviour
             {
                 //If it hits an interactable object, show UI prompt
                 string text = interactObj.GetInteractionText();
-                InteractionCanvas.GetComponentInChildren<TextMeshProUGUI>().text = text;
+                if (!isPressedTextShown)
+                    _interactText.text = text;
                 InteractionCanvas.SetActive(true);
-                //TODO
+
                 if (Input.GetKeyDown(interactObj.GetInteractionKey()))
                 {
                     //If E is pressed when the prompt is showing: Call Interact() on the object
                     string pressedText = interactObj.Interact();
-                    if (pressedText != null)
-                        InteractionCanvas.GetComponentInChildren<Text>().text = pressedText;
+                    if (pressedText != string.Empty)
+                    {
+                        _interactText.text = pressedText;
+                        isPressedTextShown = true;
+                    }
                 }
+            } else
+            {
+                InteractionCanvas.SetActive(false);
+                isPressedTextShown = false;
             }
-        } else
-        {
-            InteractionCanvas.SetActive(false);
         }
     }
 }

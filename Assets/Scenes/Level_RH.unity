@@ -511,74 +511,6 @@ Transform:
   - {fileID: 7054507546148581879}
   m_Father: {fileID: 1375925161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &115506577
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1284114739875996576, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_Name
-      value: CubeHitPrefabTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146880102744154416, guid: 94411d6fac06f7d4abfbe966828c5e41,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94411d6fac06f7d4abfbe966828c5e41, type: 3}
 --- !u!4 &144013227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7963394323149208758, guid: b63aaeb23ecf8e64eb1f2b1278de8a16,
@@ -2445,6 +2377,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1623530713}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecf6b6969c53c4d4da165e0334318456,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1623530714}
   m_SourcePrefab: {fileID: 100100000, guid: ecf6b6969c53c4d4da165e0334318456, type: 3}
 --- !u!1001 &1272975855
 PrefabInstance:
@@ -2939,6 +2875,27 @@ MonoBehaviour:
   keyCode: 101
   OnPressedText: You need a key first!
   InteractionText: Press [KEY] to interact.
+--- !u!65 &1623530714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623530712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.25}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!4 &1632302273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f028e1d009ab4374b988ad307b9ff9d2,
@@ -6479,4 +6436,3 @@ SceneRoots:
   - {fileID: 1375925161}
   - {fileID: 543261992}
   - {fileID: 584365884}
-  - {fileID: 115506577}
