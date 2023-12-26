@@ -14,6 +14,8 @@ public class DimensionalShift : MonoBehaviour
     private bool isSwitching = false;
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
 
+    public static bool isDimensionalShiftEnabled = false;
+
     public delegate void CameraChanged(bool cameraIs3D);
     public static event CameraChanged OnCameraChanged;
 
@@ -26,19 +28,22 @@ public class DimensionalShift : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !isSwitching && camera3D.enabled)
+        if (isDimensionalShiftEnabled)
         {
-            StartCoroutine(SwitchTo2DCamera());
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !isSwitching && camera2D.enabled)
-        {
-            StartCoroutine(SwitchTo3DCamera());
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && !isSwitching && camera3D.enabled)
+            {
+                StartCoroutine(SwitchTo2DCamera());
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && !isSwitching && camera2D.enabled)
+            {
+                StartCoroutine(SwitchTo3DCamera());
+            }
 
-        if (camera2D.enabled)
-        {
-            //camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
-            camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
+            if (camera2D.enabled)
+            {
+                //camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+                camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z);
+            }
         }
     }
 
@@ -46,14 +51,16 @@ public class DimensionalShift : MonoBehaviour
     {
         camera3D.enabled = true;
         camera2D.enabled = false;
-        OnCameraChanged(camera3D);
+        if (OnCameraChanged != null)
+            OnCameraChanged(camera3D);
     }
 
     void Enable2DCamera()
     {
         camera2D.enabled = true;
         camera3D.enabled = false;
-        OnCameraChanged(camera3D);
+        if (OnCameraChanged != null)
+            OnCameraChanged(camera3D);
     }
     
     //Coroutine to swap from 3D to 2D with a transition time
