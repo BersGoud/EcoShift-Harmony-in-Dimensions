@@ -1,6 +1,8 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class DimensionalShift : MonoBehaviour
 {
@@ -34,7 +36,7 @@ public class DimensionalShift : MonoBehaviour
 
         if (camera2D.enabled)
         {
-            camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+            //camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
             camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
         }
     }
@@ -54,6 +56,10 @@ public class DimensionalShift : MonoBehaviour
     //Coroutine to swap from 3D to 2D with a transition time
     System.Collections.IEnumerator SwitchTo2DCamera()
     {
+        ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
+        controller.MainCamera = camera2D;
+        controller.Invert = true;
+
         isSwitching = true;
         float timer = 0.0f;
         float initialFOV = camera3D.fieldOfView;
@@ -96,6 +102,10 @@ public class DimensionalShift : MonoBehaviour
     //Coroutine to swap from 2D to 3D with a transition time
     System.Collections.IEnumerator SwitchTo3DCamera()
     {
+        ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
+        controller.MainCamera = camera3D;
+        controller.Invert = false;
+
         isSwitching = true;
         float timer = 0.0f;
         float initialOrthoSize = camera2D.orthographicSize;
@@ -106,8 +116,8 @@ public class DimensionalShift : MonoBehaviour
             float t = timer / transitionDuration;
 
             // Clamp the orthographic size to the specified maximum
-            camera2D.orthographicSize = Mathf.Lerp(initialOrthoSize, 0f, t);
-            camera2D.orthographicSize = Mathf.Clamp(Mathf.Lerp(initialOrthoSize, 0f, t), 0f, maxOrthoSize);
+            camera2D.orthographicSize = Mathf.Lerp(initialOrthoSize, 0.5f, t);
+            camera2D.orthographicSize = Mathf.Clamp(Mathf.Lerp(initialOrthoSize, 0.5f, t), 0.5f, maxOrthoSize);
             yield return null;
         }
 
@@ -119,7 +129,7 @@ public class DimensionalShift : MonoBehaviour
             timer += Time.deltaTime;
             float t = timer / transitionDuration;
 
-            camera3D.fieldOfView = Mathf.Lerp(0f, 60f, t);
+            camera3D.fieldOfView = Mathf.Lerp(0.5f, 60f, t);
             yield return null;
         }
 
