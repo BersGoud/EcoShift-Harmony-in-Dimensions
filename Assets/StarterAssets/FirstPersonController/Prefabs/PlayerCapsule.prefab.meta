@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: c5efc39a8aaf6e64ea40e9ad573e9b47
+guid: ced82170a653e2340b3a171ffdd6a6d2
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
@@ -15,3 +17,4 @@ AssetOrigin:
   uploadId: 562678
 =======
 >>>>>>> Stashed changes
+>>>>>>> bf11b70bb4115d764fc175d2c36770b42542c94d
