@@ -5,3 +5,16 @@ PrefabImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196525
+  packageName: Starter Assets - First Person Character Controller | URP
+  packageVersion: 1.2
+  assetPath: Assets/StarterAssets/FirstPersonController/Prefabs/PlayerCapsule.prefab
+  uploadId: 562678
+=======
+>>>>>>> Stashed changes
+>>>>>>> bf11b70bb4115d764fc175d2c36770b42542c94d
