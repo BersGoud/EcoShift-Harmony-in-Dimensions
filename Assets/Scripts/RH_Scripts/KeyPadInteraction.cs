@@ -4,8 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeTest : Interaction
+public class KeyPadInteraction : Interaction
 {
+
     public override string Interact()
     {
         Debug.Log("E was pressed on this object!");
