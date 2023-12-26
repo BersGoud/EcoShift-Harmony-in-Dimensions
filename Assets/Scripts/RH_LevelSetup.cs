@@ -5,6 +5,9 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public BoxCollider Key;
+
     void Start()
     {
         DimensionalShift.isDimensionalShiftEnabled = true;
@@ -18,14 +21,16 @@ public class Test : MonoBehaviour
         {
             foreach (GameObject obj in remove)
             {
-                obj.SetActive(false);
+                obj.GetComponent<Renderer>().enabled = false;
             }
+            Key.enabled = true;
         } else
         {
             foreach (GameObject obj in remove)
             {
-                obj.SetActive(true);
+                obj.GetComponent<Renderer>().enabled = true;
             }
+            Key.enabled = false;
         }
     }
 
