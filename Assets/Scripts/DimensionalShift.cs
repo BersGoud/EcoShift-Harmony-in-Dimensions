@@ -1,6 +1,8 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class DimensionalShift : MonoBehaviour
 {
@@ -11,8 +13,11 @@ public class DimensionalShift : MonoBehaviour
 
     private bool isSwitching = false;
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
-    
 
+    public static bool isDimensionalShiftEnabled = false;
+
+    public delegate void CameraChanged(bool cameraIs3D);
+    public static event CameraChanged OnCameraChanged;
 
     void Start()
     {
@@ -23,19 +28,22 @@ public class DimensionalShift : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !isSwitching)
+        if (isDimensionalShiftEnabled)
         {
-            StartCoroutine(SwitchTo2DCamera());
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && !isSwitching)
-        {
-            StartCoroutine(SwitchTo3DCamera());
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && !isSwitching && camera3D.enabled)
+            {
+                StartCoroutine(SwitchTo2DCamera());
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && !isSwitching && camera2D.enabled)
+            {
+                StartCoroutine(SwitchTo3DCamera());
+            }
 
-        if (camera2D.enabled)
-        {
-            camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
-            camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
+            if (camera2D.enabled)
+            {
+                //camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+                camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z);
+            }
         }
     }
 
@@ -43,29 +51,24 @@ public class DimensionalShift : MonoBehaviour
     {
         camera3D.enabled = true;
         camera2D.enabled = false;
+        if (OnCameraChanged != null)
+            OnCameraChanged(camera3D.enabled);
     }
 
     void Enable2DCamera()
     {
         camera2D.enabled = true;
         camera3D.enabled = false;
+        if (OnCameraChanged != null)
+            OnCameraChanged(camera3D.enabled);
     }
     
     //Coroutine to swap from 3D to 2D with a transition time
     System.Collections.IEnumerator SwitchTo2DCamera()
     {
+        ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
+
         isSwitching = true;
-        float timer = 0.0f;
-        float initialFOV = camera3D.fieldOfView;
-
-        while (timer < transitionDuration)
-        {
-            timer += Time.deltaTime;
-            float t = timer / transitionDuration;
-
-            camera3D.fieldOfView = Mathf.Lerp(initialFOV, 0f, t);
-            yield return null;
-        }
 
         Debug.Log("Checking player");
         if (player != null)
@@ -75,20 +78,13 @@ public class DimensionalShift : MonoBehaviour
         }
 
         Enable2DCamera();
-        
+
+        controller.MainCamera = camera2D;
+        controller.Invert = true;
+
         // camera2D.transform.rotation = camera3D.transform.rotation; 
 
-        timer = 0.0f;
-        while (timer < transitionDuration)
-        {
-            timer += Time.deltaTime;
-            float t = timer / transitionDuration;
-
-            // Clamp the orthographic size to the specified maximum
-            camera2D.orthographicSize = Mathf.Lerp(0f, initialFOV, t);
-            camera2D.orthographicSize = Mathf.Clamp(camera2D.orthographicSize, 0f, maxOrthoSize);
-            yield return null;
-        }
+        yield return LerpCamera(camera2D, 0.5f, maxOrthoSize, transitionDuration);
 
         isSwitching = false;
     }
@@ -96,33 +92,30 @@ public class DimensionalShift : MonoBehaviour
     //Coroutine to swap from 2D to 3D with a transition time
     System.Collections.IEnumerator SwitchTo3DCamera()
     {
+        ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
+
         isSwitching = true;
-        float timer = 0.0f;
-        float initialOrthoSize = camera2D.orthographicSize;
 
-        while (timer < transitionDuration)
-        {
-            timer += Time.deltaTime;
-            float t = timer / transitionDuration;
+        yield return LerpCamera(camera2D, maxOrthoSize, 0.5f, transitionDuration);
 
-            // Clamp the orthographic size to the specified maximum
-            camera2D.orthographicSize = Mathf.Lerp(initialOrthoSize, 0f, t);
-            camera2D.orthographicSize = Mathf.Clamp(Mathf.Lerp(initialOrthoSize, 0f, t), 0f, maxOrthoSize);
-            yield return null;
-        }
+        controller.MainCamera = camera3D;
+        controller.Invert = false;
 
         Enable3DCamera();
 
-        timer = 0.0f;
-        while (timer < transitionDuration)
+        isSwitching = false;
+    }
+
+    private System.Collections.IEnumerator LerpCamera(Camera camera, float lerpStart, float lerpStop, float duration)
+    {
+        float timer = 0.0f;
+        while (timer < duration)
         {
             timer += Time.deltaTime;
-            float t = timer / transitionDuration;
+            float t = timer / duration;
 
-            camera3D.fieldOfView = Mathf.Lerp(0f, 60f, t);
+            camera.orthographicSize = Mathf.Lerp(lerpStart, lerpStop, t);
             yield return null;
         }
-
-        isSwitching = false;
     }
 }
