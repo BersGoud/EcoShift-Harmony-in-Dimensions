@@ -52,7 +52,7 @@ public class DimensionalShift : MonoBehaviour
         camera3D.enabled = true;
         camera2D.enabled = false;
         if (OnCameraChanged != null)
-            OnCameraChanged(camera3D);
+            OnCameraChanged(camera3D.enabled);
     }
 
     void Enable2DCamera()
@@ -60,7 +60,7 @@ public class DimensionalShift : MonoBehaviour
         camera2D.enabled = true;
         camera3D.enabled = false;
         if (OnCameraChanged != null)
-            OnCameraChanged(camera3D);
+            OnCameraChanged(camera3D.enabled);
     }
     
     //Coroutine to swap from 3D to 2D with a transition time
