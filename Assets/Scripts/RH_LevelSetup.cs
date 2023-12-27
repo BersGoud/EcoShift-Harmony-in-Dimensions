@@ -15,7 +15,7 @@ public class RH_LevelSetup : MonoBehaviour
         DimensionalShift.isDimensionalShiftEnabled = true;
         DimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
 
-        DialogueSystem.DisplayDialogue(new string[] { "TEST" });
+        //DialogueSystem.DisplayDialogue(new string[] { "TEST" });
 
         StartCoroutine(Intro());
     }
