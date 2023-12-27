@@ -36,14 +36,15 @@ public class DialogueSystem : MonoBehaviour
 
     public void DisplayNext(float waitTimeSeconds = 0)
     {
-        if (_lines.Length - 1 > _currentIndex)
+        _currentIndex++;
+        if (_lines.Length - 1 >= _currentIndex)
         {
-            _currentIndex++;
             StartCoroutine(TypeLine());
         }
         else
         {
             gameObject.SetActive(false);
+            _currentIndex = 0;
         }
     }
 
