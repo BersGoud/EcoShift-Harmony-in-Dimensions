@@ -3,20 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BooksTeacherInteraction : Interaction
+public class BooksTeacherInteraction : RH_InteractionBase
 {
-    private RH_LevelSetup _setup;
-    private void Start()
+    private int totalBooks;
+    protected override void Start()
     {
-        _setup = GameObject.FindFirstObjectByType<RH_LevelSetup>();
+        totalBooks = gameObject.transform.childCount;
+        base.Start();
+    }
+    public override string GetInteractionText()
+    {
+        if (totalBooks > 0)
+        {
+            return base.GetInteractionText();
+        } else
+        {
+            return string.Empty;
+        }
     }
     public override string Interact()
     {
-        _setup.BooksInventory++;
+        if (totalBooks > 0)
+        {
+            _setup.BooksInventory++;
+            DisableBookOnTop();
+        }
         return base.Interact();
     }
     private void DisableBookOnTop()
     {
-
+        totalBooks--;
+        gameObject.transform.GetChild(totalBooks).gameObject.SetActive(false);
     }
 }

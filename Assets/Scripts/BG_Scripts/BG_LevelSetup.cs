@@ -7,8 +7,9 @@ public class BG_Leve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DimensionalShift.isDimensionalShiftEnabled = true;
-        DimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
+        DimensionalShift dimensionalShift = gameObject.GetComponent<DimensionalShift>();
+        dimensionalShift.isDimensionalShiftEnabled = true;
+        dimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
     }
 
     private void DimensionalShift_OnCameraChanged(bool cameraIs3D)

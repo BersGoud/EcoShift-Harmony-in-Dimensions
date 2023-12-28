@@ -2,14 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class RH_LevelSetup : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    [Header("Game items")]
     public BoxCollider Key;
     public DialogueSystem DialogueSystem;
+    public KeyPadInteraction KeyPad;
 
+    [Header("Director")]
+    public PlayableDirector Director;
+
+    [Header("Timeline cutscenes")]
+    public TimelineAsset BookMissing;
+    public TimelineAsset BooksDelivered;
+    public TimelineAsset DoorOpen;
+    public TimelineAsset Intro;
+    public TimelineAsset WrongBook;
+
+    [Header("Game settings")]
     public int BooksNeeded = 6;
     
     private int booksInventory = 0;
@@ -19,10 +33,11 @@ public class RH_LevelSetup : MonoBehaviour
 
     void Start()
     {
-        DimensionalShift.isDimensionalShiftEnabled = true;
-        DimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
+        DimensionalShift dimensionalShift = gameObject.GetComponent<DimensionalShift>();
+        dimensionalShift.isDimensionalShiftEnabled = true;
+        dimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
 
-        
+        //Director.Play(Intro);
     }
 
     private void DimensionalShift_OnCameraChanged(bool cameraIs3D)
@@ -34,14 +49,16 @@ public class RH_LevelSetup : MonoBehaviour
             {
                 obj.GetComponent<Renderer>().enabled = false;
             }
-            Key.enabled = true;
+            if (Key != null)
+                Key.enabled = true;
         } else
         {
             foreach (GameObject obj in remove)
             {
                 obj.GetComponent<Renderer>().enabled = true;
             }
-            Key.enabled = false;
+            if (Key != null)
+                Key.enabled = false;
         }
     }
     /// <summary>
@@ -62,6 +79,9 @@ public class RH_LevelSetup : MonoBehaviour
         {
             return false;
         }
+
+        if (_booksDelivered <= BooksNeeded)
+            Director.Play(BookMissing);
         return true;
         //Once we delivered 6 books, (1 fake one), we start the missingbook timeline scene.
         //Then once the timeline scene has been started, we use the laptop to buy a recycled notebook
@@ -69,6 +89,10 @@ public class RH_LevelSetup : MonoBehaviour
         //If we deliver the wrong book, then we start the WrongBook cutscene and we don't add a book delivered.
     }
 
+    public void KeyCollected()
+    {
+        KeyPad.AllowInteraction = true;
+    }
     // Update is called once per frame
     void Update()
     {
