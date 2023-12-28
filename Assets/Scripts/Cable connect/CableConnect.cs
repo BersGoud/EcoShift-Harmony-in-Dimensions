@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CableConnect : MonoBehaviour
 {
+    public CableManager cableManager; // Drag the GameObject with the CableManager script to this field
     public CableEnd objectA;
     public Transform point1;
     public Transform point2;
@@ -80,6 +81,8 @@ public class CableConnect : MonoBehaviour
                     // The mouse button is released on the target object
                     Debug.Log("Mouse up on: " + objectA.name);
                     SpawnObject();
+                    // Notify the CableManager that a cable is connected
+                    cableManager.CableConnected();
                     ismousedown = false;
                 }
                 else
