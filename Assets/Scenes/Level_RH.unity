@@ -1678,7 +1678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276498324}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.029475532, w: -0.22719231}
+  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.02947553, w: -0.22719231}
   m_LocalPosition: {x: 3.055, y: 1.5271649, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2367,7 +2367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436113975}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0048256866, y: -0.7093314, z: 0.0048564225, w: 0.704842}
+  m_LocalRotation: {x: 0.0048256856, y: -0.70933145, z: 0.004856423, w: 0.7048419}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2439,7 +2439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442748018}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20139022, y: 0.7022892, z: 0.21864809, w: 0.6468577}
+  m_LocalRotation: {x: -0.20139024, y: 0.7022893, z: 0.21864812, w: 0.6468577}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2893,7 +2893,7 @@ PlayableDirector:
   m_GameObject: {fileID: 523302226}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: b5373b16c0c05d64288a709e62822648, type: 2}
+  m_PlayableAsset: {fileID: 0}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3713,7 +3713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &785817899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4323,6 +4323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: {fileID: 1168622933}
   DialogueSystem: {fileID: 1635610404}
+  BooksNeeded: 6
 --- !u!4 &853918921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7310803094611834338, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
@@ -4689,7 +4690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025108120}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1914924, y: 0.8016048, z: -0.33751023, w: -0.45480466}
+  m_LocalRotation: {x: -0.19149244, y: 0.8016048, z: -0.3375102, w: -0.45480475}
   m_LocalPosition: {x: -0.431, y: 2.404, z: 2.471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4750,6 +4751,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_Pickup (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4799,11 +4805,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
-        type: 3}
-      propertyPath: m_Name
-      value: Book_Pickup (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6659,6 +6660,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_Pickup (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6708,11 +6714,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
-        type: 3}
-      propertyPath: m_Name
-      value: Book_Pickup (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7960,11 +7961,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.025189158
       objectReference: {fileID: 0}
-    - target: {fileID: 4338062284771108676, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
-        type: 3}
-      propertyPath: m_Depth
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 4469739206657273016, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -7989,11 +7985,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.13255322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557842887685722273, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
-        type: 3}
-      propertyPath: m_Depth
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4557842887685722273, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
@@ -8735,11 +8726,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0019221306
       objectReference: {fileID: 0}
-    - target: {fileID: 7639206551890677636, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7981444852095572337, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9222,6 +9208,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_Pickup (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9271,11 +9262,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
-        type: 3}
-      propertyPath: m_Name
-      value: Book_Pickup (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9931,6 +9917,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_Pickup (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9981,11 +9972,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
-        type: 3}
-      propertyPath: m_Name
-      value: Book_Pickup (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9999,6 +9985,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_Pickup (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10048,11 +10039,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
-        type: 3}
-      propertyPath: m_Name
-      value: Book_Pickup (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
