@@ -20,7 +20,7 @@ namespace Assets.Scripts.Interaction
 
         public virtual string GetInteractionText()
         {
-            return InteractionText.Replace("[KEY]", keyCode.ToString());
+            return InteractionText.Replace("KEY", keyCode.ToString());
         }
 
         public virtual string Interact()
