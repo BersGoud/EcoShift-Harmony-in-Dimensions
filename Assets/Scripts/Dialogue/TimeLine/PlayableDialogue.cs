@@ -21,7 +21,8 @@ namespace Assets.Scripts.Dialogue.TimeLine
             system = data as DialogueSystem;
 
             Dialogue.Duration = playable.GetDuration();
-            system.TypeLetter(Dialogue, playable.GetTime());
+            if (system != null)
+                system.TypeLetter(Dialogue, playable.GetTime());
         }
         public override void OnBehaviourPause(Playable playable, FrameData info)
         {
