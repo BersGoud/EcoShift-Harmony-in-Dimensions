@@ -168,7 +168,17 @@ namespace StarterAssets
         private void LateUpdate()
         {
             if (CameraMovementEnabled)
+            {
                 CameraRotation();
+                _input.cursorInputForLook = true;
+                _input.cursorLocked = true;
+                _input.SetCursorState(_input.cursorLocked);
+            } else
+            {
+                _input.cursorInputForLook = false;
+                _input.cursorLocked = false;
+                _input.SetCursorState(_input.cursorLocked);
+            }
         }
 
         private void AssignAnimationIDs()
