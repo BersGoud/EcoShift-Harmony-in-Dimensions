@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BooksTeacherInteraction : Interaction
+public class BooksTeacherInteraction : RH_InteractionBase
 {
-    private RH_LevelSetup _setup;
     private int totalBooks;
-    private void Start()
+    protected override void Start()
     {
-        _setup = GameObject.FindFirstObjectByType<RH_LevelSetup>();
         totalBooks = gameObject.transform.childCount;
+        base.Start();
     }
     public override string GetInteractionText()
     {

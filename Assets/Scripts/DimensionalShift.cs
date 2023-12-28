@@ -14,10 +14,10 @@ public class DimensionalShift : MonoBehaviour
     private bool isSwitching = false;
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
 
-    public static bool isDimensionalShiftEnabled = false;
+    public bool isDimensionalShiftEnabled = false;
 
     public delegate void CameraChanged(bool cameraIs3D);
-    public static event CameraChanged OnCameraChanged;
+    public event CameraChanged OnCameraChanged;
 
     void Start()
     {

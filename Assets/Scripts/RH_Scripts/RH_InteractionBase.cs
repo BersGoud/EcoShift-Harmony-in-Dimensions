@@ -6,7 +6,7 @@ using UnityEngine;
 public class RH_InteractionBase : Interaction
 {
     protected RH_LevelSetup _setup;
-    private void Start()
+    protected virtual void Start()
     {
         _setup = GameObject.FindFirstObjectByType<RH_LevelSetup>();
     }
