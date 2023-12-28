@@ -176,6 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7272065801969504917}
   - component: {fileID: 2674122723847965769}
+  - component: {fileID: 598675832024664257}
+  - component: {fileID: 8662991879094037951}
   m_Layer: 0
   m_Name: Book_Pickup
   m_TagString: Untagged
@@ -213,3 +215,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Alpha: 0.25
+--- !u!114 &598675832024664257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739793838607165198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f00c70a7f72a14e8a50602144c9463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to give book.
+  RecycledBook: 1
+  HasDelivered: 0
+--- !u!65 &8662991879094037951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739793838607165198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.57, y: 0.11, z: 0.37}
+  m_Center: {x: 0, y: 0.03, z: 0}

@@ -11,8 +11,11 @@ public class RH_LevelSetup : MonoBehaviour
     public DialogueSystem DialogueSystem;
 
     public int BooksNeeded = 6;
-
+    
+    private int booksInventory = 0;
     private int _booksDelivered = 0;
+
+    public int BooksInventory { get => booksInventory; set => booksInventory = value; }
 
     void Start()
     {
@@ -41,13 +44,25 @@ public class RH_LevelSetup : MonoBehaviour
             Key.enabled = false;
         }
     }
-
-    public void BookDelivered(bool badBook = false) //Replace this with a book interactable class.
+    /// <summary>
+    /// Should be fired when a book gets delivered.
+    /// </summary>
+    /// <param name="book">The book that is being interacted with.</param>
+    /// <returns>If the book can be delivered or not.</returns>
+    public bool BookDelivered(BookInteraction book) //Replace this with a book interactable class.
     {
-        if (!badBook)
+        if (book.RecycledBook && booksInventory > 0)
         {
+            booksInventory--;
             _booksDelivered++;
+        } else if (!book.RecycledBook)
+        {
+
+        } else
+        {
+            return false;
         }
+        return true;
         //Once we delivered 6 books, (1 fake one), we start the missingbook timeline scene.
         //Then once the timeline scene has been started, we use the laptop to buy a recycled notebook
         //If we have delivered the recycled notebook we'll start the BooksDelivered cutscene.
