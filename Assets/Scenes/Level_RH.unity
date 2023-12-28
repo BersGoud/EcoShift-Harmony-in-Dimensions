@@ -1678,7 +1678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276498324}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.02947553, w: -0.22719231}
+  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.029475532, w: -0.22719231}
   m_LocalPosition: {x: 3.055, y: 1.5271649, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2439,7 +2439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442748018}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20139024, y: 0.7022893, z: 0.21864812, w: 0.6468577}
+  m_LocalRotation: {x: -0.20139025, y: 0.7022893, z: 0.21864812, w: 0.6468576}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2748,7 +2748,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eff66dc613b995d419f496c7899f6600,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2139825946}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eff66dc613b995d419f496c7899f6600,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2139825945}
   m_SourcePrefab: {fileID: 100100000, guid: eff66dc613b995d419f496c7899f6600, type: 3}
 --- !u!4 &518396315 stripped
 Transform:
@@ -2901,7 +2909,7 @@ PlayableDirector:
   m_GameObject: {fileID: 523302226}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: 2bb530802117bcc41bff446266977160, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3252,7 +3260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621493887}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.117581524, y: 0.71282035, z: 0.12319195, w: 0.6803569}
+  m_LocalRotation: {x: -0.1175815, y: 0.71282035, z: 0.12319194, w: 0.6803569}
   m_LocalPosition: {x: 3.037, y: 2.872, z: 0.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6718,6 +6726,7 @@ MonoBehaviour:
   keyCode: 101
   OnPressedText: 
   InteractionText: Press [KEY] to pick up.
+  AllowInteraction: 1
 --- !u!65 &1590285418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6966,6 +6975,7 @@ MonoBehaviour:
   keyCode: 101
   OnPressedText: You need a key first!
   InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
 --- !u!65 &1623530714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8719,7 +8729,7 @@ PrefabInstance:
     - target: {fileID: 7999375619958768579, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8024739056763236704, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
@@ -10745,6 +10755,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 259213647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2139825944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eff66dc613b995d419f496c7899f6600,
+    type: 3}
+  m_PrefabInstance: {fileID: 518396314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2139825945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139825944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.67, y: 0.45, z: 0.46}
+  m_Center: {x: 0, y: 0.21, z: 0}
+--- !u!114 &2139825946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139825944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6a5bb5eccfbbd4982bffe518e0b05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
 --- !u!4 &543450651789023021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,

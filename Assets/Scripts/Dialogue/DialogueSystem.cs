@@ -52,6 +52,7 @@ public class DialogueSystem : MonoBehaviour
 
     public IEnumerator TypeText(DialogueBox dialogue)
     {
+        gameObject.SetActive(true);
         DialogueText.text = "";
         _typing = true;
         SpeakerText.text = dialogue.SpeakerName;

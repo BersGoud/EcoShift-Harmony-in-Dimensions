@@ -30,7 +30,7 @@ public class InteractionPrompt : MonoBehaviour
         Ray r = new Ray(Camera.position, Camera.forward);
         if (Physics.Raycast(r, out RaycastHit hitInfo, Range))
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj) && interactObj.GetEnabled())
             {
                 //If it hits an interactable object, show UI prompt
                 string text = interactObj.GetInteractionText();

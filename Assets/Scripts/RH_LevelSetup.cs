@@ -34,14 +34,16 @@ public class RH_LevelSetup : MonoBehaviour
             {
                 obj.GetComponent<Renderer>().enabled = false;
             }
-            Key.enabled = true;
+            if (Key != null)
+                Key.enabled = true;
         } else
         {
             foreach (GameObject obj in remove)
             {
                 obj.GetComponent<Renderer>().enabled = true;
             }
-            Key.enabled = false;
+            if (Key != null)
+                Key.enabled = false;
         }
     }
     /// <summary>

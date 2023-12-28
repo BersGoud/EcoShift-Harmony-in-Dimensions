@@ -20,5 +20,6 @@ namespace Assets.Scripts.Interfaces
         /// <returns>The text that needs to be displayed.</returns>
         public string GetInteractionText();
         public KeyCode GetInteractionKey();
+        public bool GetEnabled();
     }
 }
