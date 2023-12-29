@@ -684,8 +684,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1025108121}
-  - {fileID: 414538228}
   - {fileID: 521737649}
   - {fileID: 159537008}
   - {fileID: 174093666}
@@ -1200,6 +1198,7 @@ Transform:
   - {fileID: 1676210759}
   - {fileID: 1271083481}
   - {fileID: 1052557348}
+  - {fileID: 1704619055}
   m_Father: {fileID: 523302227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159537007
@@ -1741,6 +1740,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &271565982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9091657033587796394, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635610403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &276498324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276498324}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.029475532, w: -0.22719231}
+  m_LocalRotation: {x: 0.0068797567, y: 0.9733795, z: 0.02947553, w: -0.22719231}
   m_LocalPosition: {x: 3.055, y: 1.5271649, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2212,13 +2223,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414538227}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31893387, y: -0.26928163, z: 0.09503116, w: 0.90373546}
-  m_LocalPosition: {x: -0.592, y: 2.404, z: 0.92}
+  m_LocalRotation: {x: 0.318934, y: -0.2692813, z: 0.095031105, w: 0.90373546}
+  m_LocalPosition: {x: 0.6840763, y: 1.0076406, z: -1.0459995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 60248002}
-  m_Father: {fileID: 71909822}
+  m_Father: {fileID: 1704619055}
   m_LocalEulerAnglesHint: {x: 46.499, y: -119.837, z: 0.229}
 --- !u!114 &414538229
 MonoBehaviour:
@@ -2238,8 +2249,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1052557348}
-  m_Follow: {fileID: 1052557348}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 19.4
     OrthographicSize: 10
@@ -2567,7 +2578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442748018}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20139022, y: 0.7022892, z: 0.21864809, w: 0.6468577}
+  m_LocalRotation: {x: -0.20139022, y: 0.7022893, z: 0.21864814, w: 0.6468576}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2810,6 +2821,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &510272716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4331652221986616851, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635610403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &518396314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3178,16 +3195,16 @@ Light:
   m_GameObject: {fileID: 540331775}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
-  m_Range: 10
+  m_Intensity: 15
+  m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4406,13 +4423,15 @@ MonoBehaviour:
   Key: {fileID: 1168622933}
   DialogueSystem: {fileID: 1635610404}
   KeyPad: {fileID: 1623530713}
+  BookCameraFocus: {fileID: 1704619055}
+  Laptop: {fileID: 2139825946}
   Director: {fileID: 523302228}
   BookMissing: {fileID: 11400000, guid: 2bb530802117bcc41bff446266977160, type: 2}
   BooksDelivered: {fileID: 11400000, guid: f95b80b942cf1f54894c00f855445d08, type: 2}
   DoorOpen: {fileID: 11400000, guid: 6ade0cf2044870748a9024c4d31e63a7, type: 2}
   Intro: {fileID: 11400000, guid: b5373b16c0c05d64288a709e62822648, type: 2}
   WrongBook: {fileID: 11400000, guid: af2686c88a32585459ef03fc936972e6, type: 2}
-  BooksNeeded: 6
+  BooksNeeded: 5
 --- !u!4 &853918921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7310803094611834338, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
@@ -4779,13 +4798,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025108120}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.19149241, y: 0.8016048, z: -0.33751023, w: -0.4548047}
-  m_LocalPosition: {x: -0.431, y: 2.404, z: 2.471}
+  m_LocalRotation: {x: -0.19149227, y: 0.801605, z: -0.33751014, w: -0.45480457}
+  m_LocalPosition: {x: 0.8450775, y: 1.0076406, z: 0.50500107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1786434803}
-  m_Father: {fileID: 71909822}
+  m_Father: {fileID: 1704619055}
   m_LocalEulerAnglesHint: {x: 43.514, y: -124.083, z: 0.073}
 --- !u!114 &1025108122
 MonoBehaviour:
@@ -4805,8 +4824,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1052557348}
-  m_Follow: {fileID: 1052557348}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 10
@@ -5014,7 +5033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132427116}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.01812836, y: 0.7680637, z: 0.021764452, w: 0.63974667}
+  m_LocalRotation: {x: -0.018128373, y: 0.7680637, z: 0.021764468, w: 0.63974667}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6017,13 +6036,14 @@ GameObject:
   - component: {fileID: 1355408078}
   - component: {fileID: 1355408077}
   - component: {fileID: 1355408076}
+  - component: {fileID: 1355408079}
   m_Layer: 0
   m_Name: LaptopUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1355408075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6091,7 +6111,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355408074}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -6107,6 +6127,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1355408079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355408074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d997eedcae47184cbe60dfb936f8319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teacherInteraction: {fileID: 1590285417}
 --- !u!1 &1360732827
 GameObject:
   m_ObjectHideFlags: 0
@@ -6599,7 +6632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1475105508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355408079}
+        m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
+        m_MethodName: NormalClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1475105508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7220,6 +7265,9 @@ MonoBehaviour:
   OnPressedText: 
   InteractionText: Press [KEY] to pick up.
   AllowInteraction: 1
+  TotalBooks: 0
+  bookInHand: {fileID: 1751202908}
+  RecycledBook: 1
 --- !u!65 &1590285418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9622,6 +9670,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1355408075}
+    - targetCorrespondingSourceObject: {fileID: 4331652221986616851, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1751202909}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4138988898472184133, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
@@ -9740,7 +9792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1678926886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355408079}
+        m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
+        m_MethodName: RecyledClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1678926886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9953,6 +10017,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703399361}
   m_CullTransparentMesh: 1
+--- !u!1 &1704619054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704619055}
+  m_Layer: 0
+  m_Name: BookFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704619055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704619054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.301378, y: -3.505, z: 19.67565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1025108121}
+  - {fileID: 414538228}
+  m_Father: {fileID: 154075495}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710286847
 GameObject:
   m_ObjectHideFlags: 3
@@ -10048,6 +10145,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1740718774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 510272716}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.031175625
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0016193977
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.010173702
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.43570098
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49887577
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5725876
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.483147
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -81.118
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 173.718
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -76.751
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5935bc849600964399c559f2213f922,
+        type: 3}
+      propertyPath: m_TagString
+      value: BookHand
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5935bc849600964399c559f2213f922, type: 3}
 --- !u!1 &1746449068
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,6 +10295,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1531485412}
+--- !u!1 &1751202908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c5935bc849600964399c559f2213f922,
+    type: 3}
+  m_PrefabInstance: {fileID: 1740718774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1751202909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c5935bc849600964399c559f2213f922,
+    type: 3}
+  m_PrefabInstance: {fileID: 1740718774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1758306653
 GameObject:
   m_ObjectHideFlags: 0
@@ -11767,7 +11954,10 @@ MonoBehaviour:
   keyCode: 101
   OnPressedText: 
   InteractionText: Press [KEY] to interact.
-  AllowInteraction: 0
+  AllowInteraction: 1
+  LaptopUI: {fileID: 1355408078}
+  Player: {fileID: 271565982}
+  teacherInteraction: {fileID: 1590285417}
 --- !u!4 &543450651789023021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
