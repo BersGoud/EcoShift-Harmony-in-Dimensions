@@ -51,8 +51,8 @@ public class BooksTeacherInteraction : RH_InteractionBase
     }
     public void EnableBookOnBottom(bool isBookRecyled)
     {
-        TotalBooks++;
         gameObject.transform.GetChild(TotalBooks).gameObject.SetActive(true);
+        TotalBooks++;
         RecycledBook = isBookRecyled;
     }
 }

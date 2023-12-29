@@ -6,13 +6,10 @@ using UnityEngine;
 
 public class LaptopInteraction : RH_InteractionBase
 {
-    public Canvas LaptopUI;
-    public ThirdPersonController Player;
-    public BooksTeacherInteraction teacherInteraction;
+    public LaptopUI LaptopUI;
     public override string Interact()
     {
-        LaptopUI.enabled = true;
-        Player.CameraMovementEnabled = false;
+        LaptopUI.EnableUI();
         return base.Interact();
     }
 }

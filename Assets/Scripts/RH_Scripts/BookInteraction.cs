@@ -20,6 +20,9 @@ public class BookInteraction : RH_InteractionBase
             gameObject.GetComponent<ChangeTransparency>().Alpha = 1;
             teacherInteraction.DisableBookInHand();
             return base.Interact();
+        } else
+        {
+            teacherInteraction.DisableBookInHand();
         }
         return "";
     }

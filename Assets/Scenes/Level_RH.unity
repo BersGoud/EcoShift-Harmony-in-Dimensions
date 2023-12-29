@@ -3089,6 +3089,8 @@ PlayableDirector:
     value: {fileID: 1635610404}
   - key: {fileID: -6088987389604730171, guid: af2686c88a32585459ef03fc936972e6, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 539263767374740173, guid: f95b80b942cf1f54894c00f855445d08, type: 2}
+    value: {fileID: 853918924}
   m_ExposedReferences:
     m_References:
     - 25e25afbd62f6fb4b927e45febc60408: {fileID: 0}
@@ -4425,6 +4427,8 @@ MonoBehaviour:
   KeyPad: {fileID: 1623530713}
   BookCameraFocus: {fileID: 1704619055}
   Laptop: {fileID: 2139825946}
+  Lightning: {fileID: 1698045679}
+  LightningActivated: {fileID: 7400000, guid: 0ec78b4b5408c8043a6bcc6e7afbd273, type: 2}
   Director: {fileID: 523302228}
   BookMissing: {fileID: 11400000, guid: 2bb530802117bcc41bff446266977160, type: 2}
   BooksDelivered: {fileID: 11400000, guid: f95b80b942cf1f54894c00f855445d08, type: 2}
@@ -4438,6 +4442,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1635610403}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &853918924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853918915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 92ad1d6254d39054b9abeeb9a0a59ed1, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 853918918}
+          m_TargetAssemblyTypeName: RH_LevelSetup, Assembly-CSharp
+          m_MethodName: EnablePower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &876436420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
@@ -5033,7 +5067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132427116}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.018128373, y: 0.7680637, z: 0.021764468, w: 0.63974667}
+  m_LocalRotation: {x: -0.01812836, y: 0.7680637, z: 0.021764452, w: 0.63974667}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6139,6 +6173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d997eedcae47184cbe60dfb936f8319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 271565982}
   teacherInteraction: {fileID: 1590285417}
 --- !u!1 &1360732827
 GameObject:
@@ -9679,6 +9714,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 853918918}
+    - targetCorrespondingSourceObject: {fileID: 4138988898472184133, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 853918924}
   m_SourcePrefab: {fileID: 100100000, guid: f073ae8e9857a0649bd2e7a222f4e7d4, type: 3}
 --- !u!114 &1635610404 stripped
 MonoBehaviour:
@@ -10323,7 +10362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1758306654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11955,9 +11994,7 @@ MonoBehaviour:
   OnPressedText: 
   InteractionText: Press [KEY] to interact.
   AllowInteraction: 1
-  LaptopUI: {fileID: 1355408078}
-  Player: {fileID: 271565982}
-  teacherInteraction: {fileID: 1590285417}
+  LaptopUI: {fileID: 1355408079}
 --- !u!4 &543450651789023021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7272065801969504917, guid: 402ee78cd940f92419cb4ff1427a7891,
