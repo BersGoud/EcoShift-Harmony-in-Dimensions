@@ -9,7 +9,7 @@ public class LaptopInteraction : RH_InteractionBase
     public LaptopUI LaptopUI;
     public override string Interact()
     {
-        LaptopUI.EnableUI();
+        LaptopUI.Show();
         return base.Interact();
     }
 }

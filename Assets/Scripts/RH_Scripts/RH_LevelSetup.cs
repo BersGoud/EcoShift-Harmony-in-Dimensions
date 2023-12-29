@@ -1,4 +1,5 @@
 using Assets.Scripts.RH_Scripts.Classes;
+using Assets.Scripts.UI;
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,6 +33,11 @@ public class RH_LevelSetup : MonoBehaviour
     public TimelineAsset Intro;
     public TimelineAsset WrongBook;
 
+    [Header("UIManagers")]
+    public GameOverManager gameOver;
+    public CountdownManager Countdown;
+
+
     [Header("Game settings")]
     public int BooksNeeded = 6;
     
@@ -49,7 +55,7 @@ public class RH_LevelSetup : MonoBehaviour
         shift.isDimensionalShiftEnabled = false;
         shift.OnCameraChanged += DimensionalShift_OnCameraChanged;
 
-        //Director.Play(Intro);
+        Director.Play(Intro);
     }
 
     private void DimensionalShift_OnCameraChanged(bool cameraIs3D)
@@ -112,19 +118,28 @@ public class RH_LevelSetup : MonoBehaviour
 
         if (_booksDelivered >= BooksNeeded && !MissingDone)
         {
-            MissingDone = true;
-            BookInteraction[] books = GameObject.FindObjectsByType<BookInteraction>(FindObjectsSortMode.None);
-            Transform bookTransform = findBookMissing(books).transform;
-            BookCameraFocus.transform.position = bookTransform.position;
-            CinemachineVirtualCamera[] cameras = BookCameraFocus.GetComponentsInChildren<CinemachineVirtualCamera>();
-            foreach (CinemachineVirtualCamera camera in cameras)
-            {
-                camera.LookAt = bookTransform;
-            }
-            Director.Play(BookMissing);
-            Laptop.AllowInteraction = true;
+            PlayMissingBookCutscene();
         }
         return true;
+    }
+    private Coroutine GameOverCouritine;
+    private void PlayMissingBookCutscene()
+    {
+        if (GameOverCouritine != null)
+            StopCoroutine(GameOverCouritine);
+        Countdown.Hide();
+
+        MissingDone = true;
+        BookInteraction[] books = GameObject.FindObjectsByType<BookInteraction>(FindObjectsSortMode.None);
+        Transform bookTransform = findBookMissing(books).transform;
+        BookCameraFocus.transform.position = bookTransform.position;
+        CinemachineVirtualCamera[] cameras = BookCameraFocus.GetComponentsInChildren<CinemachineVirtualCamera>();
+        foreach (CinemachineVirtualCamera camera in cameras)
+        {
+            camera.LookAt = bookTransform;
+        }
+        Director.Play(BookMissing);
+        Laptop.AllowInteraction = true;
     }
 
     private BookInteraction findBookMissing(BookInteraction[] books)
@@ -151,8 +166,30 @@ public class RH_LevelSetup : MonoBehaviour
         shift.isDimensionalShiftEnabled = true;
     }
     // Update is called once per frame
+    public int CountdownSeconds;
+    public void StartGame()
+    {
+        GameOverCouritine = StartCoroutine(CountDown(CountdownSeconds));
+    }
+    public IEnumerator CountDown(int seconds)
+    {
+        for (int i = seconds; i >= 0; i--)
+        {
+            Countdown.ShowCounter(i);
+            yield return new WaitForSeconds(1f);
+        }
+        //If we haven't delivered the books slow down time and show the game over UI.
+        Time.timeScale = 1F;
+        do
+        {
+            yield return new WaitForSeconds(0.1F);
+            Time.timeScale -= 0.1F;
+        } while (Time.timeScale > 0.1);
+        Time.timeScale = 0F;
+        gameOver.ShowGameOverText("Try to be faster next time!");
+        Time.timeScale = 1F;
+    }
     void Update()
     {
-        
     }
 }
