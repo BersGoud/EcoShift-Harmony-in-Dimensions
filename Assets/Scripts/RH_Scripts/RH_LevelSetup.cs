@@ -1,5 +1,8 @@
+using Assets.Scripts.RH_Scripts.Classes;
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -12,6 +15,12 @@ public class RH_LevelSetup : MonoBehaviour
     public BoxCollider Key;
     public DialogueSystem DialogueSystem;
     public KeyPadInteraction KeyPad;
+    public Transform BookCameraFocus;
+    public LaptopInteraction Laptop;
+    public Animator Lightning;
+
+    [Header("Animations")]
+    public AnimationClip LightningActivated;
 
     [Header("Director")]
     public PlayableDirector Director;
@@ -29,13 +38,16 @@ public class RH_LevelSetup : MonoBehaviour
     private int booksInventory = 0;
     private int _booksDelivered = 0;
 
+    private Book bookEquipped;
+
     public int BooksInventory { get => booksInventory; set => booksInventory = value; }
+    private DimensionalShift shift;
 
     void Start()
     {
-        DimensionalShift dimensionalShift = gameObject.GetComponent<DimensionalShift>();
-        dimensionalShift.isDimensionalShiftEnabled = true;
-        dimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
+        shift = gameObject.GetComponent<DimensionalShift>();
+        shift.isDimensionalShiftEnabled = false;
+        shift.OnCameraChanged += DimensionalShift_OnCameraChanged;
 
         //Director.Play(Intro);
     }
@@ -66,32 +78,77 @@ public class RH_LevelSetup : MonoBehaviour
     /// </summary>
     /// <param name="book">The book that is being interacted with.</param>
     /// <returns>If the book can be delivered or not.</returns>
-    public bool BookDelivered(BookInteraction book) //Replace this with a book interactable class.
+    private bool MissingDone = false;
+    public bool BookDelivered(BookInteraction book)
     {
-        if (book.RecycledBook && booksInventory > 0)
-        {
-            booksInventory--;
-            _booksDelivered++;
-        } else if (!book.RecycledBook)
-        {
+        //Once we delivered 5 books, we start the missingbook timeline scene.
+        //Then once the timeline scene has been started, we use the laptop to buy a recycled notebook
+        //If we have delivered the recycled notebook we'll start the BooksDelivered cutscene.
+        //If we deliver the wrong book, then we start the WrongBook cutscene and we don't add a book delivered.
 
+        if (booksInventory > 0)
+        {
+            if (bookEquipped.RecycledBook)
+            {
+                booksInventory--;
+                _booksDelivered++;
+                book.HasDelivered = true;
+                if (MissingDone)
+                {
+                    Laptop.AllowInteraction = false;
+                    Lightning.Play(LightningActivated.name);
+                    Director.Play(BooksDelivered);
+                }
+            } else
+            {
+                booksInventory--;
+                Director.Play(WrongBook);
+                return false;
+            }  
         } else
         {
             return false;
         }
 
-        if (_booksDelivered <= BooksNeeded)
+        if (_booksDelivered >= BooksNeeded && !MissingDone)
+        {
+            MissingDone = true;
+            BookInteraction[] books = GameObject.FindObjectsByType<BookInteraction>(FindObjectsSortMode.None);
+            Transform bookTransform = findBookMissing(books).transform;
+            BookCameraFocus.transform.position = bookTransform.position;
+            CinemachineVirtualCamera[] cameras = BookCameraFocus.GetComponentsInChildren<CinemachineVirtualCamera>();
+            foreach (CinemachineVirtualCamera camera in cameras)
+            {
+                camera.LookAt = bookTransform;
+            }
             Director.Play(BookMissing);
+            Laptop.AllowInteraction = true;
+        }
         return true;
-        //Once we delivered 6 books, (1 fake one), we start the missingbook timeline scene.
-        //Then once the timeline scene has been started, we use the laptop to buy a recycled notebook
-        //If we have delivered the recycled notebook we'll start the BooksDelivered cutscene.
-        //If we deliver the wrong book, then we start the WrongBook cutscene and we don't add a book delivered.
+    }
+
+    private BookInteraction findBookMissing(BookInteraction[] books)
+    {
+        foreach (BookInteraction book in books)
+        {
+            if (!book.HasDelivered)
+                return book;
+        }
+        return null;
+    }
+    public void GiveBook(Book book)
+    {
+        BooksInventory++;
+        bookEquipped = book; 
     }
 
     public void KeyCollected()
     {
         KeyPad.AllowInteraction = true;
+    }
+    public void EnablePower()
+    {
+        shift.isDimensionalShiftEnabled = true;
     }
     // Update is called once per frame
     void Update()
