@@ -1,14 +1,14 @@
+using Assets.Scripts.UI;
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : CanvasManagerBase
 {
     public static bool GameIsPaused = false;
     public GameObject PauseCanvas;
-    public ThirdPersonController playerController;
 
     // Update is called once per frame
     void Update()
@@ -17,29 +17,27 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPaused)
             {
-                Resume();
+                Hide();
             }
             else
             {
-                Pause();
+                Show();
             }
         }
     }
 
-    public void Resume()
+    public override void Show(bool disableMovement = true)
     {
-        playerController.CameraMovementEnabled = true;
-        PauseCanvas.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
+        base.Show(disableMovement);
+        Time.timeScale = 0f;
+        GameIsPaused = true; 
     }
 
-    void Pause()
+    public override void Hide(bool enableMovement = true)
     {
-        playerController.CameraMovementEnabled = false;
-        PauseCanvas.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
+        base.Hide(enableMovement);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void CloseScene()
