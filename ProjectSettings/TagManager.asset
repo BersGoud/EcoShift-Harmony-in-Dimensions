@@ -7,6 +7,7 @@ TagManager:
   - 2DCamera
   - CinemachineTarget
   - RemoveIn2D
+  - BookHand
   layers:
   - Default
   - TransparentFX
