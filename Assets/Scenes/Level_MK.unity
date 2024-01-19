@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &1264357553 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7512877266806903905, guid: ed3723c50aae9d24bb69a9335d97f95d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5876271166420712277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1444204391
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +403,99 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: f073ae8e9857a0649bd2e7a222f4e7d4, type: 3}
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: ed3723c50aae9d24bb69a9335d97f95d, type: 3}
+--- !u!1001 &7472946306979345193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 84745493852703926, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374344865261147914, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1264357553}
+    - target: {fileID: 3374344865261147914, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_UpdateRectTransformForStandalone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447149533197856036, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542375289110636341, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1264357553}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349280302075573275, guid: d341b0268e5a9804a823f19b935f6a03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d341b0268e5a9804a823f19b935f6a03, type: 3}
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -405,3 +503,4 @@ SceneRoots:
   - {fileID: 3878662137637811956}
   - {fileID: 1444204395}
   - {fileID: 1850947213}
+  - {fileID: 7472946306979345193}
