@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c306232ab733ea54f900f3e0901a4729
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Prefabs/Generator.prefab
+  uploadId: 588172

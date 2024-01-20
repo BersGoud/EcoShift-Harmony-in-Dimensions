@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6fc8e15adebaa8d42b18d3d930dee492
+timeCreated: 1512896143
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70061
+  packageName: Basic PBR Security Camera
+  packageVersion: 1.0
+  assetPath: Assets/RDL/Security_Pack/Scripts/scr_camera.cs
+  uploadId: 217455
