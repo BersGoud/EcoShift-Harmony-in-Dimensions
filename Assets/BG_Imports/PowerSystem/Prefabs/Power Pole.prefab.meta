@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d5d8ab0b794d4e24f8d92ad6f3bfe9aa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Prefabs/Power Pole.prefab
+  uploadId: 588172

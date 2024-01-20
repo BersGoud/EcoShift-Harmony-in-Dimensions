@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 82841971ac5c43c499ddf2752ed1b6d1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Example Scenes/Example Scene Building+Connection
+    FPS/FPSController.cs
+  uploadId: 588172

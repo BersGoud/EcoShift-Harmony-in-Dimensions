@@ -26,6 +26,10 @@ namespace Assets.Scripts.UI
                 Player.CameraMovementEnabled = false;
             }
         }
+        protected virtual void Awake()
+        {
+            canvas = gameObject.GetComponent<Canvas>();
+        }
         protected virtual void Start()
         {
             canvas = gameObject.GetComponent<Canvas>();

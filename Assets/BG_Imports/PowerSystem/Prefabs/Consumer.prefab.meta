@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5b7dbdbc49fdba0459f73008b34c5e80
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Prefabs/Consumer.prefab
+  uploadId: 588172
