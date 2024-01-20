@@ -5,6 +5,7 @@ using UnityEngine;
 public class CableManager : MonoBehaviour
 {
     private int cablesConnected = 0;
+    CableGamemanager gameManager = CableGamemanager.Instance;
 
     // Called when any cable is connected
     public void CableConnected()
@@ -16,6 +17,7 @@ public class CableManager : MonoBehaviour
         {
             // Change the color of the ButtonManager GameObject
             GetComponent<Renderer>().material.color = Color.green;
+            gameManager.SetMiniGameCompleted();
         }
     }
 }
