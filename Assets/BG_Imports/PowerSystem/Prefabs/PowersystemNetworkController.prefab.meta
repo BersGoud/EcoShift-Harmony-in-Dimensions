@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e3f3d67cc9f08c84c88a17a4417138ee
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Prefabs/PowersystemNetworkController.prefab
+  uploadId: 588172

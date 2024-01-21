@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2897a31b7699a5e49a9f7a051f22d9b8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Testing Material/MachineMat_On.mat
+  uploadId: 588172

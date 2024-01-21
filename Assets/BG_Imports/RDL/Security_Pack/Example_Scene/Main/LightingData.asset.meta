@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2b09114c1c2c2490ba4e4304c152e490
+timeCreated: 1471872544
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70061
+  packageName: Basic PBR Security Camera
+  packageVersion: 1.0
+  assetPath: Assets/RDL/Security_Pack/Example_Scene/Main/LightingData.asset
+  uploadId: 217455
