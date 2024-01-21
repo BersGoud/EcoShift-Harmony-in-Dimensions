@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Interact_base : Interaction
 {
-    /*protected RH_LevelSetup _setup;
-    protected virtual void Start()
+    public breakerinteract breakerUI;
+    public override string Interact()
     {
-        setup = GameObject.FindFirstObjectByType<RH_LevelSetup>();
-    }*/
+        breakerUI.Show();
+        return base.Interact();
+    }
 }

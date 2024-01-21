@@ -14,6 +14,6 @@ AssetOrigin:
   productId: 254447
   packageName: Electrical power/energy system
   packageVersion: 1.0.0
-  assetPath: Assets/PowerSystem/Example Scenes/Example Scene Building+Connection
+  assetPath: Assets/BG_Imports/PowerSystem/Example Scenes/Example Scene Building+Connection
     FPS/FPSController.cs
   uploadId: 588172
