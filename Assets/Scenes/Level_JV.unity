@@ -249,23 +249,14 @@ GameObject:
   m_Component:
   - component: {fileID: 167100915}
   - component: {fileID: 167100914}
-  - component: {fileID: 167100913}
   - component: {fileID: 167100916}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Cable Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &167100913
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 167100912}
-  m_Enabled: 1
 --- !u!20 &167100914
 Camera:
   m_ObjectHideFlags: 0
@@ -429,6 +420,7 @@ MonoBehaviour:
   point2: {fileID: 81390225}
   parent: {fileID: 842055804}
   cylinderMaterial: {fileID: 2100000, guid: 1b305d358414d7449a8245203a249e75, type: 2}
+  mainCamera: {fileID: 167100914}
 --- !u!65 &188953266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -910,7 +902,7 @@ GameObject:
   - component: {fileID: 933139167}
   - component: {fileID: 933139166}
   - component: {fileID: 933139165}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1364,6 +1356,7 @@ MonoBehaviour:
   point2: {fileID: 762297671}
   parent: {fileID: 842055804}
   cylinderMaterial: {fileID: 2100000, guid: 7aefcc1a74d9df64b934ce5d91cbbf19, type: 2}
+  mainCamera: {fileID: 167100914}
 --- !u!1 &1504118890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1370,6 @@ GameObject:
   - component: {fileID: 1504118894}
   - component: {fileID: 1504118893}
   - component: {fileID: 1504118897}
-  - component: {fileID: 1504118896}
   m_Layer: 0
   m_Name: cable yellow
   m_TagString: Untagged
@@ -1471,18 +1463,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504118890}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1504118896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504118890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddbe6bb9ed284a446883792b3b7560bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1504118897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,6 +1481,7 @@ MonoBehaviour:
   point2: {fileID: 1264815588}
   parent: {fileID: 842055804}
   cylinderMaterial: {fileID: 2100000, guid: 93a70dc019b7a7a44abf575111d3efc1, type: 2}
+  mainCamera: {fileID: 167100914}
 --- !u!1 &2145692028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1606,7 @@ MonoBehaviour:
   point2: {fileID: 362146689}
   parent: {fileID: 842055804}
   cylinderMaterial: {fileID: 2100000, guid: ef68b2747b580b0418bb0a4757a011ad, type: 2}
+  mainCamera: {fileID: 167100914}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
