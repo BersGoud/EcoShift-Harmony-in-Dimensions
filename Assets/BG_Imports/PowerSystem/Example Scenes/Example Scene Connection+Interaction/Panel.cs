@@ -65,7 +65,10 @@ namespace MrCryptographic.PowerSystem
 						{
 							generator = hit.transform.GetComponent<Generator>();
 							consumer = null;
-							OnOffText.text = "On/Off";
+							Debug.Log("generator = "+generator);
+                            Debug.Log("generator = "+generator.PowerOutput);
+                            Debug.Log($"Text onOff = {OnOffText}, text Output {OutputInputText}, text {OutputInputValueText}");
+                            OnOffText.text = "On/Off";
 							OutputInputText.text = "Output: ";
 							OutputInputValueText.text = generator.PowerOutput.ToString();
 							onToggle.gameObject.SetActive(true);

@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 254447
   packageName: Electrical power/energy system
   packageVersion: 1.0.0
-  assetPath: Assets/PowerSystem/Example Scenes/Example Scene Connection+Interaction/Panel.cs
+  assetPath: Assets/BG_Imports/PowerSystem/Example Scenes/Example Scene Connection+Interaction/Panel.cs
   uploadId: 588172
