@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4da6acaeaa37ab7479d840007a12aa7c
+timeCreated: 1512896097
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70061
+  packageName: Basic PBR Security Camera
+  packageVersion: 1.0
+  assetPath: Assets/RDL/Security_Pack/Models/TV/Materials/Box.mat
+  uploadId: 217455

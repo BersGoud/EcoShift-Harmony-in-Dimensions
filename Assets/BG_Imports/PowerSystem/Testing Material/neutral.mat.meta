@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7f00cf8f6c698d842bfcb189f3abbbaa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Testing Material/neutral.mat
+  uploadId: 588172
