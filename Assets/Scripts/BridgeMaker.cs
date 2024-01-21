@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BridgeMaker : MonoBehaviour
 {
@@ -9,6 +10,19 @@ public class BridgeMaker : MonoBehaviour
     public Transform parent;
     private GameObject cylinder;
     public Material cylinderMaterial;
+    private bool buttonclicked;
+    CableGamemanager gameManager = CableGamemanager.Instance;
+    private void OnEnable()
+    {
+        // Subscribe to the sceneUnloaded event
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe from the sceneUnloaded event
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
     public void SpawnObject()
     {
         Vector3 point1Position = point1.position + new Vector3(0.48f, 0, -0.95f);
@@ -58,7 +72,23 @@ public class BridgeMaker : MonoBehaviour
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
             {
                 // Cube is clicked
+                buttonclicked = true;
+                gameManager.StartMiniGame("Level_JV_2");
+            }
+        }
+    }
+    private void OnSceneUnloaded(Scene scene)
+    {
+        Debug.Log(scene.name);
+        // Check if the unloaded scene is the minigame scene
+        if (scene.name == "Level_JV" && buttonclicked)
+        {
+            // Trigger your code here, e.g., check GameManager and activate something
+            if (gameManager.IsMiniGameCompleted())
+            {
+                // Activate your code here
                 SpawnObject();
+                buttonclicked = false;
             }
         }
     }

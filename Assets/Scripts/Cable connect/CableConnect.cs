@@ -10,6 +10,7 @@ public class CableConnect : MonoBehaviour
     public Transform point2;
     public Transform parent;
     public Material cylinderMaterial;
+    public Camera mainCamera;
     private bool ismousedown = false;
     private GameObject cylinder;
     public void OnMouseDown() 
@@ -68,15 +69,19 @@ public class CableConnect : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && ismousedown)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            // Create a layer mask that includes all layers except the "Ignore Raycast" layer
+            int ignoreRaycastLayer = 1 << 2; // Layer index 2
+            int layerMask = ~ignoreRaycastLayer;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 // Check if the clicked object is the targetObject in ObjectA
-                if (hit.collider.gameObject == objectA.targetObject && ismousedown)
+                if (hit.collider.gameObject == objectA.targetObject)
                 {
                     // The mouse button is released on the target object
                     Debug.Log("Mouse up on: " + objectA.name);
