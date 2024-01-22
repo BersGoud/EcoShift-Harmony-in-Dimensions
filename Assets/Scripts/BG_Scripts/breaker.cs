@@ -21,7 +21,7 @@ public class breakerinteract : CanvasManagerBase
     private bool isStartButtonClicked = false;
     private Animator animator1;
     private Animator animator2;
-
+    public AudioSource correctSound;
 
     private bool isCoroutineRunning = false;
 
@@ -85,6 +85,14 @@ public class breakerinteract : CanvasManagerBase
             // Start coroutines to freeze animations after 10 seconds
             animator1.speed = 1f;
             animator2.speed = 1f;
+            correctSound.volume = 0.7f;
+            correctSound.loop = false;
+
+            // Play the correct sound
+            if (correctSound != null)
+            {
+                correctSound.Play();
+            }
 
             // Start coroutines only if they are not running
             if (!isCoroutineRunning)
