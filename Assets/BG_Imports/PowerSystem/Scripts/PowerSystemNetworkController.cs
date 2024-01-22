@@ -24,11 +24,20 @@ namespace MrCryptographic.PowerSystem
 
 		private void Awake()
 		{
-			Instance = this;
-		}
+           
+            Instance = this;
+            Debug.Log($"PowerSystemNetworkController Awake testing {Instance}");
+        }
 
-		//Creating power system with first entry as generator
-		public PowerSystem CreatePowerSystemAsGenerator(Generator generator)
+        /*void Start()
+        {
+            Debug.Log("PowerPole Start");
+            ID = Guid.NewGuid().ToString();
+            powerSystem = PowerSystemNetworkController.Instance.CreatePowerSystemAsPowerPole(this);
+        }*/
+
+        //Creating power system with first entry as generator
+        public PowerSystem CreatePowerSystemAsGenerator(Generator generator)
 		{
 			GameObject obj = Instantiate(PowerSystemPrefab, this.transform);
 			PowerSystem powerSystem = obj.GetComponent<PowerSystem>();

@@ -10,6 +10,6 @@ AssetOrigin:
   productId: 254447
   packageName: Electrical power/energy system
   packageVersion: 1.0.0
-  assetPath: Assets/PowerSystem/Example Scenes/Example Scene Building+Connection
+  assetPath: Assets/BG_Imports/PowerSystem/Example Scenes/Example Scene Building+Connection
     FPS/Example Scene FPS Building+Connection.unity
   uploadId: 588172
