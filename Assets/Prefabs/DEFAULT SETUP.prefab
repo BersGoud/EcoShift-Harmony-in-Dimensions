@@ -2709,8 +2709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a1f77877fd28646ae0333f56acb5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueText: {fileID: 0}
-  SpeakerText: {fileID: 0}
+  DialogueText: {fileID: 3934110305620403357}
+  SpeakerText: {fileID: 5003805319138442223}
   TextSpeedSeconds: 0.1
   clickToSkip: 1
 --- !u!1 &8501483757320701311
