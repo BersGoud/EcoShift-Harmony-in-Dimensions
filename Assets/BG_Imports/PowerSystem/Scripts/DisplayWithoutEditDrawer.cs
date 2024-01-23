@@ -1,14 +1,13 @@
 using UnityEngine;
-using UnityEditor;
 using Unity.VisualScripting;
 
 namespace MrCryptographic.PowerSystem
 {
-
-	[CustomPropertyDrawer(typeof(DisplayWithoutEdit))]
-	public class DisplayWithoutEditDrawer : PropertyDrawer
+	//WTF IS THIS?
+	//[CustomPropertyDrawer(typeof(DisplayWithoutEdit))]
+	public class DisplayWithoutEditDrawer// : PropertyDrawer
 	{
-
+	/*
 
 		/// <summary>
 		/// Display attribute and his value in inspector depending on the type
@@ -62,7 +61,7 @@ namespace MrCryptographic.PowerSystem
 				case SerializedPropertyType.Vector4:
 					break;
 			}
-		}
+		}*/
 	}
 
 	public class DisplayWithoutEdit : PropertyAttribute

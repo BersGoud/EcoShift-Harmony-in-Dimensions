@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI
     public class CanvasManagerBase : MonoBehaviour, ICanvasManager
     {
         public ThirdPersonController Player;
+        public StarterAssetsInputs PlayerInput;
         private Canvas canvas;
         public virtual void Hide(bool enableMovement = true)
         {
@@ -15,6 +16,7 @@ namespace Assets.Scripts.UI
             if (enableMovement)
             { 
                 Player.CameraMovementEnabled = true;
+                PlayerInput.movementEnabled = true;
             }
         }
 
@@ -24,10 +26,13 @@ namespace Assets.Scripts.UI
             if (disableMovement)
             {
                 Player.CameraMovementEnabled = false;
+                PlayerInput.movementEnabled = false;
             }
         }
         protected virtual void Awake()
         {
+            if (PlayerInput == null)
+                PlayerInput = GameObject.FindAnyObjectByType<StarterAssetsInputs>();
             canvas = gameObject.GetComponent<Canvas>();
         }
         protected virtual void Start()
