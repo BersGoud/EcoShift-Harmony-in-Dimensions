@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class BridgeMaker : MonoBehaviour
 {
+    public ThirdPersonController Player;
     public Transform point1;
     public Transform point2;
     public Transform parent;
@@ -74,6 +76,7 @@ public class BridgeMaker : MonoBehaviour
                 // Cube is clicked
                 buttonclicked = true;
                 gameManager.StartMiniGame("Level_JV_2");
+                Player.CameraMovementEnabled = false;
             }
         }
     }
@@ -88,6 +91,7 @@ public class BridgeMaker : MonoBehaviour
             {
                 // Activate your code here
                 SpawnObject();
+                Player.CameraMovementEnabled = true;
                 buttonclicked = false;
             }
         }
