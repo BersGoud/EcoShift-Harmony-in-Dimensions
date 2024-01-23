@@ -15,20 +15,24 @@ namespace StarterAssets
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
+		public bool movementEnabled = true;
 
-		[Header("Mouse Cursor Settings")]
+        [Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
 		{
-			MoveInput(value.Get<Vector2>());
+			if (movementEnabled)
+				MoveInput(value.Get<Vector2>());
+			else
+				move = Vector2.zero;
 		}
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
+			if(cursorInputForLook && movementEnabled)
 			{
 				LookInput(value.Get<Vector2>());
 			}

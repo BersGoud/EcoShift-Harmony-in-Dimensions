@@ -19,7 +19,7 @@ public class ComputerManager : CanvasManagerBase
     public TextMeshProUGUI messageBox; // Reference to the MessageBox text
     public GameObject laptop;
 
-    void Start()
+    protected override void Start()
     {
         Debug.Log("ComputerManager Start method called");
         ComputerPanel.SetActive(false);
