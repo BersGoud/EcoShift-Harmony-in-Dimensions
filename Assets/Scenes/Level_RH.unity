@@ -3410,7 +3410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621493887}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1175815, y: 0.71282035, z: 0.12319194, w: 0.6803569}
+  m_LocalRotation: {x: -0.117581524, y: 0.71282035, z: 0.12319195, w: 0.6803569}
   m_LocalPosition: {x: 3.037, y: 2.872, z: 0.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4451,6 +4451,7 @@ MonoBehaviour:
   WrongBook: {fileID: 11400000, guid: af2686c88a32585459ef03fc936972e6, type: 2}
   gameOver: {fileID: 786216036}
   Countdown: {fileID: 569231197706460001}
+  endingCanvas: {fileID: 930736918}
   BooksNeeded: 5
   CountdownSeconds: 30
 --- !u!4 &853918921 stripped
@@ -4609,6 +4610,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &930736918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635610403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2afa768ad873a146830fbe5a6842c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &938576800 stripped
@@ -5099,7 +5112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132427116}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.01812836, y: 0.7680637, z: 0.021764452, w: 0.63974667}
+  m_LocalRotation: {x: -0.018128373, y: 0.7680637, z: 0.021764468, w: 0.63974667}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5204,7 +5217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148638170}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.20139022, y: 0.7022892, z: 0.21864809, w: 0.6468577}
+  m_LocalRotation: {x: -0.20139022, y: 0.7022893, z: 0.21864814, w: 0.6468576}
   m_LocalPosition: {x: -1.7251647, y: 1.3746649, z: -2.0839987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8461,6 +8474,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.025189158
       objectReference: {fileID: 0}
+    - target: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: buttonText
+      value: Next level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: nextLevelName
+      value: Level_BG
+      objectReference: {fileID: 0}
     - target: {fileID: 4469739206657273016, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -9086,6 +9109,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.050888326
       objectReference: {fileID: 0}
+    - target: {fileID: 7300446081611214926, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310803094611834338, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9170,6 +9198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.0019221306
+      objectReference: {fileID: 0}
+    - target: {fileID: 7448318995920751712, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: m_Name
+      value: EndCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7981444852095572337, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
@@ -9610,7 +9643,7 @@ PrefabInstance:
       addedObject: {fileID: 1355408075}
     - targetCorrespondingSourceObject: {fileID: 7310803094611834338, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
-      insertIndex: -1
+      insertIndex: 8
       addedObject: {fileID: 5438223618634261231}
     - targetCorrespondingSourceObject: {fileID: 4331652221986616851, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}

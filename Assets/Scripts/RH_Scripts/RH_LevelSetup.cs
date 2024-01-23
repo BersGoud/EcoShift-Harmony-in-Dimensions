@@ -36,6 +36,7 @@ public class RH_LevelSetup : MonoBehaviour
     [Header("UIManagers")]
     public GameOverManager gameOver;
     public CountdownManager Countdown;
+    public Ending endingCanvas;
 
 
     [Header("Game settings")]
