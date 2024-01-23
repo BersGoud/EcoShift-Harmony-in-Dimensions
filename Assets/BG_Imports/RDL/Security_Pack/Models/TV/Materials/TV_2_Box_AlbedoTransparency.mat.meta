@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7842f44357acc47f58a86da706575e83
+timeCreated: 1470980304
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70061
+  packageName: Basic PBR Security Camera
+  packageVersion: 1.0
+  assetPath: Assets/RDL/Security_Pack/Models/TV/Materials/TV_2_Box_AlbedoTransparency.mat
+  uploadId: 217455

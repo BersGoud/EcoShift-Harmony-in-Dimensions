@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d3e5ce98346b8684bbf201d155504f93
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Prefabs/Cable.prefab
+  uploadId: 588172

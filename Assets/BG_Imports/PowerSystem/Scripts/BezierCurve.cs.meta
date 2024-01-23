@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7cd3bf2d0db6dbe478a4d0e5487cf790
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Scripts/BezierCurve.cs
+  uploadId: 588172

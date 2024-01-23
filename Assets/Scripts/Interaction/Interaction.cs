@@ -13,6 +13,7 @@ namespace Assets.Scripts.Interaction
         public KeyCode keyCode = KeyCode.E;
         public string OnPressedText = null;
         public string InteractionText = "Press [KEY] to interact.";
+        public bool AllowInteraction = true;
         public virtual KeyCode GetInteractionKey()
         {
             return keyCode;
@@ -26,6 +27,10 @@ namespace Assets.Scripts.Interaction
         public virtual string Interact()
         {
             return OnPressedText;
+        }
+        public virtual bool GetEnabled()
+        {
+            return AllowInteraction;
         }
     }
 }
