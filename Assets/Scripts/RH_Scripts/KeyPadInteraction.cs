@@ -19,6 +19,6 @@ public class KeyPadInteraction : RH_InteractionBase
 
     private void Director_stopped(PlayableDirector obj)
     {
-        SceneManager.LoadScene("Level_BG");
+        RH.endingCanvas.Show();
     }
 }
