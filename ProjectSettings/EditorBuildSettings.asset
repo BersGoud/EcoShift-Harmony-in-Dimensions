@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_JV.unity
     guid: bba35cf4d90396f4db6ad3dda1b854d0
+  - enabled: 1
+    path: Assets/Scenes/Level_JV_2.unity
+    guid: 2e22204c90efe654a9a5c6a1cbe32aa5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

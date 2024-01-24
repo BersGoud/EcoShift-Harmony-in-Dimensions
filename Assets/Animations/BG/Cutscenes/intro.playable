@@ -37,7 +37,7 @@ MonoBehaviour:
       Text: Currently, the power network manager is inaccessible due to the solar
         panels being off.
       Centered: 0
-      Wait: 5
+      Wait: 4
 --- !u!114 &-5582082522269894036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +93,22 @@ MonoBehaviour:
       Text: Welcome dear worker, to the solar power plant!
       Centered: 0
       Wait: 2
+--- !u!114 &-2857987840067481264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 69.33333333333333
+  m_Retroactive: 0
+  m_EmitOnce: 1
+  m_Asset: {fileID: 11400000, guid: a037febe8acc61c4298ab848ad00466f, type: 2}
 --- !u!114 &-1733369069413714331
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +176,7 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: 2996261255964146403}
   - {fileID: 5452211593688290455}
+  - {fileID: 5364541079251416508}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -261,7 +278,7 @@ MonoBehaviour:
     m_Start: 25.033333333333335
     m_ClipIn: 0
     m_Asset: {fileID: -900115938603771134}
-    m_Duration: 64
+    m_Duration: 44.3
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2996261255964146403}
     m_EaseInDuration: 0
@@ -359,7 +376,7 @@ MonoBehaviour:
       Text: In the manager, there will be a task panel that explains what you need
         to do to reconnect the power generators to the power grid.
       Centered: 0
-      Wait: 6
+      Wait: 4
 --- !u!114 &4475487451189437066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +396,31 @@ MonoBehaviour:
         the solar panels. Locate the breaker, fill in the serial number, and reactivate
         the panels to regain access to the power network manager on the laptop.
       Centered: 0
-      Wait: 12
+      Wait: 6
+--- !u!114 &5364541079251416508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -2857987840067481264}
 --- !u!114 &5452211593688290455
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -750,7 +791,7 @@ MonoBehaviour:
     m_Start: 35.15
     m_ClipIn: 0
     m_Asset: {fileID: -7846152511076682622}
-    m_Duration: 11.916666666666671
+    m_Duration: 6.050000000000004
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5452211593688290455}
     m_EaseInDuration: 0
@@ -816,10 +857,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TimeLineDialogue
   - m_Version: 1
-    m_Start: 47.06666666666667
+    m_Start: 41.2
     m_ClipIn: 0
     m_Asset: {fileID: 4475487451189437066}
-    m_Duration: 15.799999999999997
+    m_Duration: 8.583333333333336
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5452211593688290455}
     m_EaseInDuration: 0
@@ -885,7 +926,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TimeLineDialogue
   - m_Version: 1
-    m_Start: 62.86666666666667
+    m_Start: 49.78333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 5637599357311246032}
     m_Duration: 6.016666666666673
@@ -954,10 +995,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TimeLineDialogue
   - m_Version: 1
-    m_Start: 68.88333333333334
+    m_Start: 55.80000000000001
     m_ClipIn: 0
     m_Asset: {fileID: 4130392238135807477}
-    m_Duration: 9.566666666666663
+    m_Duration: 5.383333333333319
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5452211593688290455}
     m_EaseInDuration: 0
@@ -1023,10 +1064,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TimeLineDialogue
   - m_Version: 1
-    m_Start: 78.45
+    m_Start: 61.18333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -1733369069413714331}
-    m_Duration: 10.583333333333329
+    m_Duration: 8.149999999999999
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5452211593688290455}
     m_EaseInDuration: 0
