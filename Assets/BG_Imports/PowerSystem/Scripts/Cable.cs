@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	public class Cable : MonoBehaviour
