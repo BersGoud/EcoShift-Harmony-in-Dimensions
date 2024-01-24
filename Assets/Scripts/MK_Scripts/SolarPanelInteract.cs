@@ -9,15 +9,18 @@ using StarterAssets;
 public class SolarPanelInteract : MK_InteractionBase
 {
     
+    [HEADING Objects from outside]
     public ThirdPersonController player;
     public GameObject bolt;
     public GameObject powerBoard;
     public Material boltOnMaterial;
+    
+    [HEADING paramsss]
     private bool buttonClicked = false;
-
     private AudioSource _source;
     // Start is called before the first frame update
 
+    //gets excecuted before everything else
     void Awake()
     {
         _source = GetComponent<AudioSource>();
@@ -35,9 +38,9 @@ public class SolarPanelInteract : MK_InteractionBase
     }
     public override string Interact()
     {
-        _setup.gameManager.StartMiniGame("Level_MK");
-        buttonClicked = true;
-        player.CameraMovementEnabled = false;
+        _setup.gameManager.StartMiniGame("Level_MK"); //starts the cable minigame
+        buttonClicked = true; 
+        player.CameraMovementEnabled = false; //disables player movement
         return base.Interact();
 
     }
@@ -47,38 +50,31 @@ public class SolarPanelInteract : MK_InteractionBase
         // Check if the unloaded scene is the minigame scene
         if (scene.name == "Level_JV" && buttonClicked)
         {
-       
+            //checks if minigame scene is completed. if so, activate powers
             if (_setup.gameManager.IsMiniGameCompleted())
             {
-                Debug.Log("minigame completed");
-                
                 player.CameraMovementEnabled = true;
-                Debug.Log("Activated player movement");
-                
                 ActivatePower();
                 buttonClicked = false;
             }
         }
     }
 
+    /// <summary>
+    /// This piece of code got added for readability. It changes materials of an object,
+    /// plays a sound and enables the Shift power for the player. Also makes a newµ
+    /// sign appear so that the player gets more info on what happened.
+    /// </summary>
+    /// <returns></returns>
     private void ActivatePower()
     {
-        //activate bolt
-        Debug.Log("Activating bolt");
-        
+        //make bolt yellow
         if (bolt != null)
         {
-            // Get the Renderer component of the "bolt" object
             Renderer boltRenderer = bolt.GetComponent<Renderer>();
-            Debug.Log("Found renderer");
-            
-
             if (boltRenderer != null && boltOnMaterial != null)
             {
-                // Change the material to the new one
                 boltRenderer.material = boltOnMaterial;
-                Debug.Log("Changed material");
-                
             }
             else
             {
@@ -87,10 +83,9 @@ public class SolarPanelInteract : MK_InteractionBase
         }
         //activate shift power
         _setup.getShift().isDimensionalShiftEnabled = true;
+        //play sound
         _source.Play();
-        
         //show new sign
-
         powerBoard.SetActive(true);
         
         

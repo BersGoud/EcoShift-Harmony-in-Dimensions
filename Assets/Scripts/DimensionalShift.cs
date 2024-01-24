@@ -6,17 +6,25 @@ using UnityEngine.InputSystem.XR;
 
 public class DimensionalShift : MonoBehaviour
 {
+    /// <summary>
+    /// This script contains the main mechanic of our game: changing the camera perspective. It
+    /// allows the player to swap between 2D and 3D views of their scene and also fires
+    /// an event when the player chooses to swap this view.
+    /// </summary>
+    
+    
+    [HEADING Mandatory Objects]
     public Camera camera3D;
     public Camera camera2D;
-    public float transitionDuration = 1.0f; // Adjust the duration of the transition
     public Transform player;
-
-    private bool isSwitching = false;
+    [HEADING Variables to tune the look]
+    public float transitionDuration = 1.0f; // Adjust the duration of the transition
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
-
+    [HEADING State variables]
+    private bool isSwitching = false;
     public bool isDimensionalShiftEnabled = false;
-
     public delegate void CameraChanged(bool cameraIs3D);
+    [HEADING Events]
     public event CameraChanged OnCameraChanged;
 
     void Start()
@@ -26,6 +34,11 @@ public class DimensionalShift : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
     }
 
+   /// <summary>
+   /// This update script checks if the player is elligable to use the Shift power
+   /// and if so, allows for swapping of the cameras by pressing the right button.
+   /// It starts a coroutine to swap the cameras.
+   /// </summary>
     void Update()
     {
         if (isDimensionalShiftEnabled)
@@ -46,7 +59,8 @@ public class DimensionalShift : MonoBehaviour
         }
     }
 
-    void Enable3DCamera()
+   //Changes the camera to 3D
+   void Enable3DCamera()
     {
         camera3D.enabled = true;
         camera2D.enabled = false;
@@ -54,6 +68,7 @@ public class DimensionalShift : MonoBehaviour
             OnCameraChanged(camera3D.enabled);
     }
 
+   //changes the camera to 2D
     void Enable2DCamera()
     {
         camera2D.enabled = true;
@@ -66,13 +81,9 @@ public class DimensionalShift : MonoBehaviour
     System.Collections.IEnumerator SwitchTo2DCamera()
     {
         ThirdPersonController controller = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
-
         isSwitching = true;
-
-        Debug.Log("Checking player");
         if (player != null)
         {
-            Debug.Log("Changing camera pos");
             camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z );
         }
 
@@ -80,11 +91,8 @@ public class DimensionalShift : MonoBehaviour
 
         controller.MainCamera = camera2D;
         controller.Invert = true;
-
-        // camera2D.transform.rotation = camera3D.transform.rotation; 
-
+        
         yield return LerpCamera(camera2D, 0.5f, maxOrthoSize, transitionDuration);
-
         isSwitching = false;
     }
     
