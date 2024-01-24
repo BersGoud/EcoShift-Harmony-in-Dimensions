@@ -39,6 +39,7 @@ public class SolarPanelInteract : MK_InteractionBase
     public override string Interact()
     {
         _setup.gameManager.StartMiniGame("Level_MK"); //starts the cable minigame
+        AllowInteraction = false;
         buttonClicked = true; 
         player.CameraMovementEnabled = false; //disables player movement
         return base.Interact();
