@@ -14,7 +14,7 @@ public class Level_Setup_MK : MonoBehaviour
     }
     void Start()
     {
-        DimensionalShift.isDimensionalShiftEnabled = true;
+        // DimensionalShift.isDimensionalShiftEnabled = true;
     }
 
     // Update is called once per frame
