@@ -185,6 +185,7 @@ public class RH_LevelSetup : MonoBehaviour
     // Update is called once per frame
     public void StartGame()
     {
+        interaction.AllowInteraction = false;
         Countdown.StartCountdown();
     }
     void Update()
