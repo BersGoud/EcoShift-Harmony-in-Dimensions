@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CableGamemanager
 {
+    // Allows for CableGamemanager to be created in other scenes
     private static CableGamemanager instance;
     public static CableGamemanager Instance
     {
@@ -17,14 +18,14 @@ public class CableGamemanager
             return instance;
         }
     }
-    // Game progress variable
+    // Game progress variables
     private bool miniGameCompleted = false;
     private bool minibool = false;
     private string minigamelevel = "Level_JV";
     private string originallevel = "Level_JV_2";
-
-    public void StartMiniGame(string level)
+    public void StartMiniGame(string level = "Level_JV_2")
     {
+        // Start the minigame as an additive scene
         originallevel = level;
         minibool = false;
         SceneManager.LoadScene(minigamelevel, LoadSceneMode.Additive);
@@ -35,8 +36,6 @@ public class CableGamemanager
         miniGameCompleted = true;
         Debug.Log(miniGameCompleted);
         SceneManager.UnloadSceneAsync(minigamelevel);
-
-        // Add any other logic you want to execute when the mini-game is completed
     }
 
     public bool IsMiniGameCompleted()
