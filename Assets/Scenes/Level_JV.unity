@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cableManager: {fileID: 912400978}
-  objectA: {fileID: 81390226}
+  cableEnd: {fileID: 81390226}
   point1: {fileID: 188953264}
   point2: {fileID: 81390225}
   parent: {fileID: 842055804}
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cableManager: {fileID: 912400978}
-  objectA: {fileID: 762297672}
+  cableEnd: {fileID: 762297672}
   point1: {fileID: 1354385986}
   point2: {fileID: 762297671}
   parent: {fileID: 842055804}
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cableManager: {fileID: 912400978}
-  objectA: {fileID: 1264815592}
+  cableEnd: {fileID: 1264815592}
   point1: {fileID: 1504118891}
   point2: {fileID: 1264815588}
   parent: {fileID: 842055804}
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cableManager: {fileID: 912400978}
-  objectA: {fileID: 362146690}
+  cableEnd: {fileID: 362146690}
   point1: {fileID: 2145692029}
   point2: {fileID: 362146689}
   parent: {fileID: 842055804}
