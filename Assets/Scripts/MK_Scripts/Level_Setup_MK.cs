@@ -7,6 +7,7 @@ public class Level_Setup_MK : MonoBehaviour
 
     private GameObject _player;
     private DimensionalShift shift;
+    CableGamemanager gameManager = CableGamemanager.Instance;
 
    
     void Start()
