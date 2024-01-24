@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd25fb07ad410984b8902f2e3dd70539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endingCanvas: {fileID: 1020002996}
 --- !u!1 &654901696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3062,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 364412352}
   m_SourcePrefab: {fileID: 100100000, guid: f073ae8e9857a0649bd2e7a222f4e7d4, type: 3}
+--- !u!114 &1020002996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1020002995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2afa768ad873a146830fbe5a6842c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118722854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,7 +4034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2ecad8aabf69a4a9419551112d5e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level_JV_2
+  JV: {fileID: 364412352}
 --- !u!114 &1540345562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9091657033587796394, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
