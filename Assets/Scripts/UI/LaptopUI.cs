@@ -7,6 +7,12 @@ using UnityEngine;
 public class LaptopUI : CanvasManagerBase
 {
     public BooksTeacherInteraction teacherInteraction;
+    public LaptopInteraction LaptopInteraction;
+    public override void Hide(bool enableMovement = true)
+    {
+        base.Hide(enableMovement);
+        LaptopInteraction.AllowInteraction = false;
+    }
     public void RecyledClicked()
     {
         Hide();
