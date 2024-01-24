@@ -1,12 +1,15 @@
+using Assets.Scripts.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BG_Leve : MonoBehaviour
 {
+    public CountdownManager countdown;
     // Start is called before the first frame update
     void Start()
     {
+      //countdown = gameObject.GetComponent<CountdownManager>();
         DimensionalShift dimensionalShift = gameObject.GetComponent<DimensionalShift>();
         dimensionalShift.isDimensionalShiftEnabled = true;
         dimensionalShift.OnCameraChanged += DimensionalShift_OnCameraChanged;
@@ -35,5 +38,10 @@ public class BG_Leve : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void StartCounter()
+    {
+        countdown.StartCountdown();
     }
 }

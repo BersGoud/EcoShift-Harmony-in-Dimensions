@@ -41,6 +41,7 @@ namespace BG_Level.PowerSystem
 			{
                 meshRenderer.material = onMat;
                 Canvas canvas = EndingPanel.GetComponent<Canvas>();
+				Time.timeScale = 1f;
 				canvas.enabled = true;
 				Debug.Log("Test canvas" +canvas);
             }
