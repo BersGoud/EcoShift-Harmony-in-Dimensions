@@ -48,11 +48,17 @@ public class InteractionPrompt : MonoBehaviour
                         isPressedTextShown = true;
                     }
                 }
-            } else
+            }
+            else
             {
                 InteractionCanvas.SetActive(false);
                 isPressedTextShown = false;
             }
+        }
+        else
+        {
+            InteractionCanvas.SetActive(false);
+            isPressedTextShown = false;
         }
     }
 }
