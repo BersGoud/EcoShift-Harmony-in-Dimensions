@@ -9,6 +9,7 @@ public class LevelEnd : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Show Ending
         JV.endingCanvas.Show();
     }
 }

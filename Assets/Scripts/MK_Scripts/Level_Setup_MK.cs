@@ -5,11 +5,11 @@ using UnityEngine;
 public class Level_Setup_MK : MonoBehaviour
 {
 
-    private GameObject _player;
+    protected GameObject player;
     private DimensionalShift shift;
+    public CableGamemanager gameManager = CableGamemanager.Instance;
 
-   
-    void Start()
+   void Start()
     {
         shift = gameObject.GetComponent<DimensionalShift>();
         shift.isDimensionalShiftEnabled = false;
@@ -26,6 +26,11 @@ public class Level_Setup_MK : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public GameObject GetPlayer()
+    {
+        return player;
     }
     
 }

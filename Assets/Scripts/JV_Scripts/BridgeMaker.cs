@@ -1,10 +1,11 @@
+using Assets.Scripts.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using StarterAssets;
 
-public class BridgeMaker : MonoBehaviour
+public class BridgeMaker : Interaction
 {
     public ThirdPersonController Player;
     public Transform point1;
@@ -14,6 +15,14 @@ public class BridgeMaker : MonoBehaviour
     public Material cylinderMaterial;
     private bool buttonclicked;
     CableGamemanager gameManager = CableGamemanager.Instance;
+    public override string Interact()
+    {
+        // Code for interaction(currently dissabled)
+        buttonclicked = true;
+        gameManager.StartMiniGame("Level_JV_2");
+        Player.CameraMovementEnabled = false;
+        return base.Interact();
+    }
     private void OnEnable()
     {
         // Subscribe to the sceneUnloaded event
@@ -27,26 +36,27 @@ public class BridgeMaker : MonoBehaviour
     }
     public void SpawnObject()
     {
+        //Get positions of the start and end of the bridge
         Vector3 point1Position = point1.position + new Vector3(0.48f, 0, -0.95f);
         Vector3 point2Position = point2.position + new Vector3(-0.48f, 0, -0.95f);
-        // Calculate the position and rotation of the cylinder
+        // Calculate the position and rotation of the bridge
         Vector3 midpoint = (point1Position + point2Position) / 2f;
         Quaternion rotation = Quaternion.LookRotation(point2Position - point1Position);
         rotation *= Quaternion.Euler(90f, 0f, 0f);
         float distance = Vector3.Distance(point1Position, point2Position);
 
-        // Create the cylinder
+        // Create the bridge
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         cylinder.transform.position = midpoint;
         cylinder.transform.rotation = rotation;
         cylinder.transform.localScale = new Vector3(1f, distance / 2f, 1f);
 
-        // Set the parent of the cylinder
+        // Set the parent of the bridge
         if (parent != null)
         {
             cylinder.transform.parent = parent;
         }
-        // Apply the texture to the cylinder
+        // Apply the texture to the bridge
         Renderer cylinderRenderer = cylinder.GetComponent<Renderer>();
         if (cylinderRenderer != null)
         {
@@ -55,12 +65,12 @@ public class BridgeMaker : MonoBehaviour
     }
     void DeleteCylinder()
     {
+        // Destroy the bridge if necessary
         if (cylinder != null)
         {
             Destroy(cylinder);
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -75,6 +85,7 @@ public class BridgeMaker : MonoBehaviour
             {
                 // Cube is clicked
                 buttonclicked = true;
+                // Start the minigame
                 gameManager.StartMiniGame("Level_JV_2");
                 Player.CameraMovementEnabled = false;
             }
@@ -86,10 +97,10 @@ public class BridgeMaker : MonoBehaviour
         // Check if the unloaded scene is the minigame scene
         if (scene.name == "Level_JV" && buttonclicked)
         {
-            // Trigger your code here, e.g., check GameManager and activate something
+            // Check if the minigame is completed
             if (gameManager.IsMiniGameCompleted())
             {
-                // Activate your code here
+                // Create the bridge and continue the game
                 SpawnObject();
                 Player.CameraMovementEnabled = true;
                 buttonclicked = false;

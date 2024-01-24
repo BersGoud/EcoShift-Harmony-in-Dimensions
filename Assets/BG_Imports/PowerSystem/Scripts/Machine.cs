@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using BG_Level.PowerSystem;
 
 namespace BG_Level.PowerSystem
@@ -13,7 +14,8 @@ namespace BG_Level.PowerSystem
 		[DisplayWithoutEdit]
 		public bool on;
 
-		public Material onMat;
+        public GameObject EndingPanel;
+        public Material onMat;
 		public Material offMat;
 
 		public Cable connectedCable;
@@ -36,8 +38,14 @@ namespace BG_Level.PowerSystem
 		private void Update()
 		{
 			if (on && powerSystem.hasPower)
-				meshRenderer.material = onMat;
-			else
+			{
+                meshRenderer.material = onMat;
+                Canvas canvas = EndingPanel.GetComponent<Canvas>();
+				Time.timeScale = 1f;
+				canvas.enabled = true;
+				Debug.Log("Test canvas" +canvas);
+            }
+            else
 				meshRenderer.material = offMat;
 		}
 	}
