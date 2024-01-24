@@ -6,15 +6,20 @@ public class Level_Setup_MK : MonoBehaviour
 {
 
     private GameObject _player;
-   
+    private DimensionalShift shift;
 
-    void Awake()
-    {
-        
-    }
+   
     void Start()
     {
+        shift = gameObject.GetComponent<DimensionalShift>();
+        shift.isDimensionalShiftEnabled = false;
+        shift.OnCameraChanged += DimensionalShift_OnCameraChanged;
         // DimensionalShift.isDimensionalShiftEnabled = true;
+    }
+    
+    private void DimensionalShift_OnCameraChanged(bool cameraIs3D)
+    {
+        
     }
 
     // Update is called once per frame
