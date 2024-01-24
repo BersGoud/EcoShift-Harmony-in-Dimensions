@@ -1,6 +1,12 @@
 using UnityEngine;
 using TMPro;
 
+
+/// <summary>
+/// An implementation of an interaction prompt that is deprecated, but has been used to achieve a different look.
+/// When interacted with, will show a Canvas with extra TMP_text.
+/// </summary>
+/// 
 public class Interactable : MonoBehaviour
 {
     public float interactionDistance = 3f;
@@ -38,7 +44,7 @@ public class Interactable : MonoBehaviour
             interactionText.text = isPanelOpen ? "Press E to close" : "Press E to interact";
             interactionText.gameObject.SetActive(true);
 
-            // Check for input (e.g., E key press) to toggle the interaction
+            // Check for input to toggle the interaction
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ToggleInfoPanel();
