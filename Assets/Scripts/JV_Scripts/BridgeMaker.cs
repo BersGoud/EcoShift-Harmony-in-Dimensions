@@ -13,6 +13,8 @@ public class BridgeMaker : Interaction
     public Transform parent;
     private GameObject cylinder;
     public Material cylinderMaterial;
+    public Material completed;
+    private Renderer rend;
     private bool buttonclicked;
     CableGamemanager gameManager = CableGamemanager.Instance;
     public override string Interact()
@@ -102,6 +104,8 @@ public class BridgeMaker : Interaction
             {
                 // Create the bridge and continue the game
                 SpawnObject();
+                rend = GetComponent<Renderer>();
+                rend.material = completed;
                 Player.CameraMovementEnabled = true;
                 buttonclicked = false;
             }
