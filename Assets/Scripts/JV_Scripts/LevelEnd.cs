@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class LevelEnd : MonoBehaviour
 {
-    public string sceneToLoad = "Level_JV_2"; 
+    public JV_LevellSetup JV;
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneToLoad);
+        JV.endingCanvas.Show();
     }
 }
