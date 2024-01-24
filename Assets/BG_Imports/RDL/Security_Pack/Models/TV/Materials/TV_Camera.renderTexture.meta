@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3ba8b8849b37942cb88e59fbce15d05b
+timeCreated: 1470980175
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 70061
+  packageName: Basic PBR Security Camera
+  packageVersion: 1.0
+  assetPath: Assets/RDL/Security_Pack/Models/TV/Materials/TV_Camera.renderTexture
+  uploadId: 217455

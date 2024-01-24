@@ -17,6 +17,7 @@ public class KeyTriggered : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Key grabbed!");
+        GameObject.FindFirstObjectByType<RH_LevelSetup>().KeyCollected();
+        gameObject.SetActive(false);
     }
 }

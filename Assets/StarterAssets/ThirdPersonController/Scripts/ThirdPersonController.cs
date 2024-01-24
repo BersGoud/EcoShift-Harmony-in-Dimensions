@@ -75,6 +75,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Tooltip("Enabling camera movement")]
+        public bool CameraMovementEnabled = true;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -164,7 +167,18 @@ namespace StarterAssets
 
         private void LateUpdate()
         {
-            CameraRotation();
+            if (CameraMovementEnabled)
+            {
+                CameraRotation();
+                _input.cursorInputForLook = true;
+                _input.cursorLocked = true;
+                _input.SetCursorState(_input.cursorLocked);
+            } else
+            {
+                _input.cursorInputForLook = false;
+                _input.cursorLocked = false;
+                _input.SetCursorState(_input.cursorLocked);
+            }
         }
 
         private void AssignAnimationIDs()

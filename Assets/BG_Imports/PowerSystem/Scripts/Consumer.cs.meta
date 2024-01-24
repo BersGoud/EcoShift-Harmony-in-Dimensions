@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c64a0a94ceaa8b741b57b2e4405d531a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/PowerSystem/Scripts/Consumer.cs
+  uploadId: 588172

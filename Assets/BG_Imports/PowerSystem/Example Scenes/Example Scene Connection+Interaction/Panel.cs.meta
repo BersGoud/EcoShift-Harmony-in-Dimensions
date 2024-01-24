@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d01b311ffd118514d8a4c3c1c3ea127b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 254447
+  packageName: Electrical power/energy system
+  packageVersion: 1.0.0
+  assetPath: Assets/BG_Imports/PowerSystem/Example Scenes/Example Scene Connection+Interaction/Panel.cs
+  uploadId: 588172

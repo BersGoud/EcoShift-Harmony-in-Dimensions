@@ -9,6 +9,7 @@ TagManager:
   - RemoveIn2D
   - Shiftable
   - ShiftableCollidor
+  - BookHand
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Post Processing
   - 
   - 
   - 
