@@ -13,6 +13,7 @@ public class JV_LevellSetup : MonoBehaviour
         shift.isDimensionalShiftEnabled = true;
         shift.OnCameraChanged += DimensionalShift_OnCameraChanged;
     }
+    // Code used to shift between perspectives
     private void DimensionalShift_OnCameraChanged(bool cameraIs3D)
     {
         GameObject[] remove = GameObject.FindGameObjectsWithTag("RemoveIn2D");

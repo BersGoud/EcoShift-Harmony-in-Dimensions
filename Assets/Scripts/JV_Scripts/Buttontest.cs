@@ -9,10 +9,12 @@ public class Buttontest : Interaction
     private Renderer rend;
     public override string Interact()
     {
+        // Code for interaction
         rend = GetComponent<Renderer>();
         rend.material = testmaterial;
         return base.Interact();
     }
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonUp(0))

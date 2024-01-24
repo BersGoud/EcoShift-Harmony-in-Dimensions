@@ -14,6 +14,7 @@ public class CableManager : MonoBehaviour
     {
         for (int i = 0; i < objects.Length; i++)
         {
+            // Create list y coordinates to shuffle
             Vector3 pos = objects[i].position;
             ycoords.Add(pos.y);
             Vector3 pos2 = ends[i].position;
@@ -23,6 +24,7 @@ public class CableManager : MonoBehaviour
         ShuffleY<float>(ycoords2);
         for (int i = 0; i < objects.Length; i++)
         {
+            // Change the positions of the start and end objects
             Vector3 newPosition = objects[i].position;
             newPosition.y = ycoords[i];
             objects[i].position = newPosition;
@@ -36,7 +38,7 @@ public class CableManager : MonoBehaviour
     {
         cablesConnected++;
 
-        // Check if all four buttons are pressed
+        // Check if all four cables are connected
         if (cablesConnected == 4)
         {
             // Change the color of the ButtonManager GameObject
@@ -46,7 +48,7 @@ public class CableManager : MonoBehaviour
     }
     public void ShuffleY<T>(List<T> list)
     {
-        
+        // Shuffle list using Fisher-Yates shuffle algorithm
         int n = list.Count;
         System.Random rng = new System.Random();
 
