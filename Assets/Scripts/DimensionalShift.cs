@@ -41,7 +41,6 @@ public class DimensionalShift : MonoBehaviour
 
             if (camera2D.enabled)
             {
-                //camera2D.transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
                 camera2D.transform.position = new Vector3(player.position.x, camera2D.transform.position.y, player.position.z);
             }
         }
@@ -106,6 +105,7 @@ public class DimensionalShift : MonoBehaviour
         isSwitching = false;
     }
 
+    //coroutine to smoothly adjust camera size
     private System.Collections.IEnumerator LerpCamera(Camera camera, float lerpStart, float lerpStop, float duration)
     {
         float timer = 0.0f;
