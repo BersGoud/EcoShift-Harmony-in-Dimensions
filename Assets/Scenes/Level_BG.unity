@@ -1631,6 +1631,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312110330166096250, guid: 4b92566ac1a6d894885057d861e49e40,
         type: 3}
+      propertyPath: onMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c02cf5ca7657a14aa8db6430d72b7d7, type: 2}
+    - target: {fileID: 5312110330166096250, guid: 4b92566ac1a6d894885057d861e49e40,
+        type: 3}
+      propertyPath: offMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f00cf8f6c698d842bfcb189f3abbbaa, type: 2}
+    - target: {fileID: 5312110330166096250, guid: 4b92566ac1a6d894885057d861e49e40,
+        type: 3}
       propertyPath: PowerInput
       value: 200
       objectReference: {fileID: 0}
@@ -9992,6 +10002,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19893463}
     m_Modifications:
+    - target: {fileID: 1596458345660395425, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af0e495b8a5515242aa315822cabe111, type: 2}
     - target: {fileID: 2512223191162950183, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10047,6 +10062,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858519018885238870, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: onMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c02cf5ca7657a14aa8db6430d72b7d7, type: 2}
+    - target: {fileID: 6858519018885238870, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: offMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b8e98d0b0c375247b27311c11de201e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10565,6 +10590,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19893463}
     m_Modifications:
+    - target: {fileID: 1596458345660395425, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af0e495b8a5515242aa315822cabe111, type: 2}
     - target: {fileID: 2512223191162950183, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10620,6 +10650,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858519018885238870, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: onMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c02cf5ca7657a14aa8db6430d72b7d7, type: 2}
+    - target: {fileID: 6858519018885238870, guid: 4a886c44fa0a7134aaf54aaa96d71b79,
+        type: 3}
+      propertyPath: offMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b8e98d0b0c375247b27311c11de201e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using Unity.VisualScripting;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	[CustomPropertyDrawer(typeof(DisplayWithoutEdit))]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	[System.Serializable]
