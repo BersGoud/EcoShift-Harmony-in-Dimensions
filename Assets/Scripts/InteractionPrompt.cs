@@ -14,6 +14,7 @@ public class InteractionPrompt : MonoBehaviour
     public Transform Camera;
     public float Range;
     public GameObject InteractionCanvas;
+    public bool AllowInteraction = true;
 
     private TextMeshProUGUI _interactText;
     private bool isPressedTextShown = false;
@@ -28,7 +29,7 @@ public class InteractionPrompt : MonoBehaviour
     {
         //Draw a raycast from the camera
         Ray r = new Ray(Camera.position, Camera.forward);
-        if (Physics.Raycast(r, out RaycastHit hitInfo, Range))
+        if (Physics.Raycast(r, out RaycastHit hitInfo, Range) && AllowInteraction)
         {
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj) && interactObj.GetEnabled())
             {
