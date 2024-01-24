@@ -10,7 +10,7 @@ using UnityEngine;
 public class Level_Setup_MK : MonoBehaviour
 {
 
-    [HEADING objects needed to run]
+    [Header("objects needed to run")]
     private GameObject player;
     private DimensionalShift shift;
     public CableGamemanager gameManager = CableGamemanager.Instance;

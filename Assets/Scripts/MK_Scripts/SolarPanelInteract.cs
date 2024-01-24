@@ -9,13 +9,13 @@ using StarterAssets;
 public class SolarPanelInteract : MK_InteractionBase
 {
     
-    [HEADING Objects from outside]
+    [Header("Objects from outside")]
     public ThirdPersonController player;
     public GameObject bolt;
     public GameObject powerBoard;
     public Material boltOnMaterial;
     
-    [HEADING paramsss]
+    [Header("Parameters")]
     private bool buttonClicked = false;
     private AudioSource _source;
     // Start is called before the first frame update

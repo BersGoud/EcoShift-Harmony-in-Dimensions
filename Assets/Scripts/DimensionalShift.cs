@@ -13,18 +13,17 @@ public class DimensionalShift : MonoBehaviour
     /// </summary>
     
     
-    [HEADING Mandatory Objects]
+    [Header("Mandatory Objects")]
     public Camera camera3D;
     public Camera camera2D;
     public Transform player;
-    [HEADING Variables to tune the look]
+    [Header("Variables to tune the look")]
     public float transitionDuration = 1.0f; // Adjust the duration of the transition
     public float maxOrthoSize = 5.0f; //max size of the 2D cam
-    [HEADING State variables]
+    [Header("State variables")]
     private bool isSwitching = false;
     public bool isDimensionalShiftEnabled = false;
     public delegate void CameraChanged(bool cameraIs3D);
-    [HEADING Events]
     public event CameraChanged OnCameraChanged;
 
     void Start()
