@@ -1,12 +1,17 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StarterAssets;
+
 
 
 public class SolarPanelInteract : MK_InteractionBase
 {
+    
+    public ThirdPersonController player;
+    public GameObject bolt;
+    public Material boltOnMaterial;
     private bool buttonClicked = false;
     // Start is called before the first frame update
 
@@ -24,9 +29,10 @@ public class SolarPanelInteract : MK_InteractionBase
     public override string Interact()
     {
         _setup.gameManager.StartMiniGame("Level_MK");
-        Debug.Log("interacted");
-        return "";
-        
+        buttonClicked = true;
+        player.CameraMovementEnabled = false;
+        return base.Interact();
+
     }
     private void OnSceneUnloaded(Scene scene)
     {
@@ -37,9 +43,45 @@ public class SolarPanelInteract : MK_InteractionBase
        
             if (_setup.gameManager.IsMiniGameCompleted())
             {
-                // SpawnObject();
+                Debug.Log("minigame completed");
+                
+                player.CameraMovementEnabled = true;
+                Debug.Log("Activated player movement");
+                
+                ActivatePower();
                 buttonClicked = false;
             }
         }
+    }
+
+    private void ActivatePower()
+    {
+        //activate bolt
+        Debug.Log("Activating bolt");
+        
+        if (bolt != null)
+        {
+            // Get the Renderer component of the "bolt" object
+            Renderer boltRenderer = bolt.GetComponent<Renderer>();
+            Debug.Log("Found renderer");
+            
+
+            if (boltRenderer != null && boltOnMaterial != null)
+            {
+                // Change the material to the new one
+                boltRenderer.material = boltOnMaterial;
+                Debug.Log("Changed material");
+                
+            }
+            else
+            {
+                Debug.LogError("Renderer on the 'bolt' object or new material is not assigned.");
+            }
+        }
+        //activate shift power
+        _setup.getShift().isDimensionalShiftEnabled = true;
+        Debug.Log("Axtivated power");
+        
+        //show new sign
     }
 }
