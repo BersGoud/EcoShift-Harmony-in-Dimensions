@@ -7,6 +7,8 @@ TagManager:
   - 2DCamera
   - CinemachineTarget
   - RemoveIn2D
+  - Shiftable
+  - ShiftableCollidor
   layers:
   - Default
   - TransparentFX
