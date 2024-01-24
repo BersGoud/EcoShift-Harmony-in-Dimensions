@@ -3055,7 +3055,7 @@ PlayableDirector:
   m_GameObject: {fileID: 523302226}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: af2686c88a32585459ef03fc936972e6, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -3410,7 +3410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621493887}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1175815, y: 0.71282035, z: 0.12319194, w: 0.6803569}
+  m_LocalRotation: {x: -0.117581524, y: 0.71282035, z: 0.12319195, w: 0.6803569}
   m_LocalPosition: {x: 3.037, y: 2.872, z: 0.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4937,6 +4937,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name
@@ -6220,6 +6225,7 @@ MonoBehaviour:
   Player: {fileID: 271565982}
   PlayerInput: {fileID: 271565985}
   teacherInteraction: {fileID: 1590285417}
+  LaptopInteraction: {fileID: 2139825946}
 --- !u!1 &1360732827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7231,6 +7237,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name
@@ -7347,6 +7358,7 @@ MonoBehaviour:
   AllowInteraction: 1
   TotalBooks: 0
   bookInHand: {fileID: 1751202908}
+  laptop: {fileID: 2139825946}
   RecycledBook: 1
 --- !u!65 &1590285418
 BoxCollider:
@@ -9243,6 +9255,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.03272874
       objectReference: {fileID: 0}
+    - target: {fileID: 7999375619958768579, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8024739056763236704, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9808,6 +9825,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name
@@ -10718,6 +10740,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name
@@ -10786,6 +10813,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name
@@ -12123,6 +12155,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 154075495}
     m_Modifications:
+    - target: {fileID: 598675832024664257, guid: 402ee78cd940f92419cb4ff1427a7891,
+        type: 3}
+      propertyPath: LaptopInteraction
+      value: 
+      objectReference: {fileID: 2139825946}
     - target: {fileID: 4739793838607165198, guid: 402ee78cd940f92419cb4ff1427a7891,
         type: 3}
       propertyPath: m_Name

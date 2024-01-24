@@ -7,9 +7,12 @@ using UnityEngine;
 public class BookInteraction : RH_InteractionBase
 {
     public bool HasDelivered = false;
+    private ChangeTransparency transparency;
     private BooksTeacherInteraction teacherInteraction;
+    public LaptopInteraction LaptopInteraction;
     protected override void Start()
     {
+        transparency = gameObject.GetComponent<ChangeTransparency>();
         teacherInteraction = GameObject.FindFirstObjectByType<BooksTeacherInteraction>();
         base.Start();
     }
@@ -17,11 +20,12 @@ public class BookInteraction : RH_InteractionBase
     {
         if (!HasDelivered && _setup.BookDelivered(this))
         {
-            gameObject.GetComponent<ChangeTransparency>().Alpha = 1;
+            transparency.Alpha = 1;
             teacherInteraction.DisableBookInHand();
             return base.Interact();
-        } else
+        } else if (transparency.Alpha != 1)
         {
+            LaptopInteraction.AllowInteraction = true;
             teacherInteraction.DisableBookInHand();
         }
         return "";

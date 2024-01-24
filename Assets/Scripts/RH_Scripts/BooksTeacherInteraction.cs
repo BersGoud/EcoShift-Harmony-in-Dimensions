@@ -8,6 +8,7 @@ public class BooksTeacherInteraction : RH_InteractionBase
 {
     public int TotalBooks;
     public GameObject bookInHand;
+    public LaptopInteraction laptop;
     public bool RecycledBook = true;
     protected override void Start()
     {
@@ -37,11 +38,13 @@ public class BooksTeacherInteraction : RH_InteractionBase
     public void DisableBookInHand()
     {
         bookInHand.SetActive(false);
+        laptop.AllowInteraction = true;
         this.AllowInteraction = true;
     }
     public void EnableBookInHand()
     {
         bookInHand.SetActive(true);
+        laptop.AllowInteraction = false;
         this.AllowInteraction = false;
     }
     private void DisableBookOnTop()
@@ -51,7 +54,7 @@ public class BooksTeacherInteraction : RH_InteractionBase
     }
     public void EnableBookOnBottom(bool isBookRecyled)
     {
-        gameObject.transform.GetChild(TotalBooks).gameObject.SetActive(true);
+         gameObject.transform.GetChild(TotalBooks).gameObject.SetActive(true);
         TotalBooks++;
         RecycledBook = isBookRecyled;
     }
