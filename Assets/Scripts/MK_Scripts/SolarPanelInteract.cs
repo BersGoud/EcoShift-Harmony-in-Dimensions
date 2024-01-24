@@ -11,10 +11,17 @@ public class SolarPanelInteract : MK_InteractionBase
     
     public ThirdPersonController player;
     public GameObject bolt;
+    public GameObject powerBoard;
     public Material boltOnMaterial;
     private bool buttonClicked = false;
+
+    private AudioSource _source;
     // Start is called before the first frame update
 
+    void Awake()
+    {
+        _source = GetComponent<AudioSource>();
+    }
     private void OnEnable()
     {
         // Subscribe to the sceneUnloaded event
@@ -80,8 +87,12 @@ public class SolarPanelInteract : MK_InteractionBase
         }
         //activate shift power
         _setup.getShift().isDimensionalShiftEnabled = true;
-        Debug.Log("Axtivated power");
+        _source.Play();
         
         //show new sign
+
+        powerBoard.SetActive(true);
+        
+        
     }
 }
