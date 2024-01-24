@@ -1,10 +1,11 @@
+using Assets.Scripts.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using StarterAssets;
 
-public class BridgeMaker : MonoBehaviour
+public class BridgeMaker : Interaction
 {
     public ThirdPersonController Player;
     public Transform point1;
@@ -14,6 +15,13 @@ public class BridgeMaker : MonoBehaviour
     public Material cylinderMaterial;
     private bool buttonclicked;
     CableGamemanager gameManager = CableGamemanager.Instance;
+    public override string Interact()
+    {
+        buttonclicked = true;
+        gameManager.StartMiniGame("Level_JV_2");
+        Player.CameraMovementEnabled = false;
+        return base.Interact();
+    }
     private void OnEnable()
     {
         // Subscribe to the sceneUnloaded event

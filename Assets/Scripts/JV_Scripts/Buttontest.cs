@@ -1,11 +1,18 @@
+using Assets.Scripts.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buttontest : MonoBehaviour
+public class Buttontest : Interaction
 {
     public Material testmaterial;
     private Renderer rend;
+    public override string Interact()
+    {
+        rend = GetComponent<Renderer>();
+        rend.material = testmaterial;
+        return base.Interact();
+    }
     void Update()
     {
         if (Input.GetMouseButtonUp(0))

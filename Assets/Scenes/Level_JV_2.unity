@@ -434,6 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 1550135256}
   point2: {fileID: 1519013071}
@@ -582,11 +586,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 173186253}
   point2: {fileID: 1984583996}
   parent: {fileID: 3736049}
-  cylinderMaterial: {fileID: 2100000, guid: 7aefcc1a74d9df64b934ce5d91cbbf19, type: 2}
+  cylinderMaterial: {fileID: 2100000, guid: f846a04a12b1ca945948a1c26c34b4db, type: 2}
 --- !u!65 &654901699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -898,6 +906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 173186253}
   point2: {fileID: 1550135256}
@@ -3121,6 +3133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 173186253}
   point2: {fileID: 742285934}
@@ -3197,6 +3213,73 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118722854}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1138111204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138111205}
+  - component: {fileID: 1138111207}
+  - component: {fileID: 1138111206}
+  m_Layer: 0
+  m_Name: Ending
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138111205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138111204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1519013071}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138111206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138111204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2ecad8aabf69a4a9419551112d5e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JV: {fileID: 364412352}
+--- !u!65 &1138111207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138111204}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1288108832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,6 +3327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 1758442362}
   point2: {fileID: 1721049743}
@@ -3753,11 +3840,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 1984583996}
   point2: {fileID: 1438616972}
   parent: {fileID: 3736049}
-  cylinderMaterial: {fileID: 2100000, guid: 7aefcc1a74d9df64b934ce5d91cbbf19, type: 2}
+  cylinderMaterial: {fileID: 2100000, guid: f846a04a12b1ca945948a1c26c34b4db, type: 2}
 --- !u!65 &1501743623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3843,7 +3934,6 @@ GameObject:
   - component: {fileID: 1519013072}
   - component: {fileID: 1519013076}
   - component: {fileID: 1519013075}
-  - component: {fileID: 1519013077}
   m_Layer: 0
   m_Name: PlatformRose
   m_TagString: Untagged
@@ -3863,7 +3953,8 @@ Transform:
   m_LocalPosition: {x: -10, y: 0, z: 10}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1138111205}
   m_Father: {fileID: 3736049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1519013072
@@ -4022,19 +4113,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 10
   m_ShadowAngle: 0
---- !u!114 &1519013077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519013070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa2ecad8aabf69a4a9419551112d5e06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JV: {fileID: 364412352}
 --- !u!114 &1540345562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9091657033587796394, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
@@ -4094,6 +4172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b12579d1456c849840005976d2918d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: Use left mouse to interact
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 1
   testmaterial: {fileID: 2100000, guid: f846a04a12b1ca945948a1c26c34b4db, type: 2}
 --- !u!65 &1541674072
 BoxCollider:
@@ -4406,6 +4488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 742285934}
   point2: {fileID: 1297390772}
@@ -4915,6 +5001,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a5cb4c035c0949a5e934b152dbfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
+  OnPressedText: 
+  InteractionText: Press [KEY] to interact.
+  AllowInteraction: 0
   Player: {fileID: 1540345562}
   point1: {fileID: 173186253}
   point2: {fileID: 1758442362}
