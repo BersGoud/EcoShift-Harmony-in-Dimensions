@@ -744,6 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 939884993}
+  PlayerInput: {fileID: 0}
   ComputerPanel: {fileID: 197479151}
   character: {fileID: 2095088948}
   stuff: {fileID: 1437319437}
@@ -1644,6 +1645,11 @@ PrefabInstance:
       propertyPath: PowerInput
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 5312110330166096250, guid: 4b92566ac1a6d894885057d861e49e40,
+        type: 3}
+      propertyPath: EndingPanel
+      value: 
+      objectReference: {fileID: 1143369485}
     - target: {fileID: 5854101766823659566, guid: 4b92566ac1a6d894885057d861e49e40,
         type: 3}
       propertyPath: m_Name
@@ -2438,6 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 939884993}
+  PlayerInput: {fileID: 0}
   solarPanel1: {fileID: 637006212}
   solarPanel2: {fileID: 1735531050}
   breakerUI: {fileID: 712684678}
@@ -4638,6 +4645,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: buttonText
+      value: Next level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457916464833368307, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+        type: 3}
+      propertyPath: nextLevelName
+      value: Level_MK
+      objectReference: {fileID: 0}
     - target: {fileID: 4469739206657273016, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -6179,6 +6196,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142622648}
   m_CullTransparentMesh: 1
+--- !u!1 &1143369485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7448318995920751712, guid: f073ae8e9857a0649bd2e7a222f4e7d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 987462329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1149580182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4679158801187576, guid: e1adc2d31fac236438c87e79d5c31628,
