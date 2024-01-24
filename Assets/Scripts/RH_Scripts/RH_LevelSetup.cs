@@ -1,3 +1,4 @@
+using Assets.Scripts.Interaction;
 using Assets.Scripts.RH_Scripts.Classes;
 using Assets.Scripts.UI;
 using Cinemachine;
@@ -46,17 +47,33 @@ public class RH_LevelSetup : MonoBehaviour
     private int _booksDelivered = 0;
 
     private Book bookEquipped;
+    private InteractionPrompt interaction;
 
     public int BooksInventory { get => booksInventory; set => booksInventory = value; }
     private DimensionalShift shift;
 
     void Start()
     {
+        interaction = gameObject.GetComponent<InteractionPrompt>();
+
         shift = gameObject.GetComponent<DimensionalShift>();
         shift.isDimensionalShiftEnabled = false;
         shift.OnCameraChanged += DimensionalShift_OnCameraChanged;
 
+        Director.stopped += Director_stopped;
+        Director.played += Director_played;
+
         Director.Play(Intro);
+    }
+
+    private void Director_played(PlayableDirector obj)
+    {
+        interaction.AllowInteraction = false;
+    }
+
+    private void Director_stopped(PlayableDirector obj)
+    {
+        interaction.AllowInteraction = true;
     }
 
     private void DimensionalShift_OnCameraChanged(bool cameraIs3D)
@@ -123,11 +140,10 @@ public class RH_LevelSetup : MonoBehaviour
         }
         return true;
     }
-    private Coroutine GameOverCouritine;
+    
     private void PlayMissingBookCutscene()
     {
-        if (GameOverCouritine != null)
-            StopCoroutine(GameOverCouritine);
+        Countdown.StopCountdown();
         Countdown.Hide();
 
         MissingDone = true;
@@ -167,28 +183,9 @@ public class RH_LevelSetup : MonoBehaviour
         shift.isDimensionalShiftEnabled = true;
     }
     // Update is called once per frame
-    public int CountdownSeconds;
     public void StartGame()
     {
-        GameOverCouritine = StartCoroutine(CountDown(CountdownSeconds));
-    }
-    public IEnumerator CountDown(int seconds)
-    {
-        for (int i = seconds; i >= 0; i--)
-        {
-            Countdown.ShowCounter(i);
-            yield return new WaitForSeconds(1f);
-        }
-        //If we haven't delivered the books slow down time and show the game over UI.
-        Time.timeScale = 1F;
-        do
-        {
-            yield return new WaitForSeconds(0.1F);
-            Time.timeScale -= 0.1F;
-        } while (Time.timeScale > 0.1);
-        Time.timeScale = 0F;
-        gameOver.ShowGameOverText("Try to be faster next time!");
-        Time.timeScale = 1F;
+        Countdown.StartCountdown();
     }
     void Update()
     {
