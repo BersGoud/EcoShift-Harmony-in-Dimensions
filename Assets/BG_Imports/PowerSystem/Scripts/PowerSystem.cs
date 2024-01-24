@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
-using MrCryptographic.PowerSystem;
+using BG_Level.PowerSystem;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	public class PowerSystem : MonoBehaviour

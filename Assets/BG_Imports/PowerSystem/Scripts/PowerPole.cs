@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MrCryptographic.PowerSystem;
+using BG_Level.PowerSystem;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	public class PowerPole : MonoBehaviour

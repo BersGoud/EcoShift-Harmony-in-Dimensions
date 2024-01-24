@@ -2,10 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
-
-	//Don't look at this. This is pure "bullshit". Its olny made to show stats in the info panel at the example scene so I don't have given any effort at this!
 	public class Panel : MonoBehaviour
 	{
 		public bool infoMode = true;

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MrCryptographic.PowerSystem
+namespace BG_Level.PowerSystem
 {
 
 	[CustomEditor(typeof(PowerSystem))]
