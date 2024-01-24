@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JV_LevellSetup : MonoBehaviour
 {
+    public Ending endingCanvas;
     private DimensionalShift shift;
     // Start is called before the first frame update
     void Start()

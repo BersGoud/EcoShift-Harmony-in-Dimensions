@@ -71,7 +71,7 @@ public class BridgeMaker : MonoBehaviour
             RaycastHit hit;
 
             // Check if the ray hits the cube
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            if (Physics.Raycast(ray, out hit,10f) && hit.collider.gameObject == gameObject)
             {
                 // Cube is clicked
                 buttonclicked = true;
